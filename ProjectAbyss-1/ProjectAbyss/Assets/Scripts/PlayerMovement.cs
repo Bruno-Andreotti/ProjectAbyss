@@ -15,16 +15,18 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // GetComponent<Grab>().isHolding = true;
-        HorizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-
-        animator.SetFloat("Speed",Mathf.Abs(HorizontalMove));
+        
+            
+            HorizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+       
+        //animator.SetFloat("Speed",Mathf.Abs(HorizontalMove));
 
         if(Input.GetAxisRaw("Vertical")> 0)
         {
             jump = 20f;
             animator.SetBool("IsJumping", true);
         }
-        if (GetComponent<Grab>().isHolding == true)
+       /* if (GetComponent<Grab>().isHolding == true)
         {
             animator.SetBool("IsGrabbing", true);
         }
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsGrabbing", false);
         }
+        */
     }
 
     public void OnLanding()
