@@ -57,6 +57,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Scenes\3rdPersonWithAimMode\ActivateOnKeypress.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetProperty.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetTargetController.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Scenes\DualTarget\MoveAimTarget.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Scenes\DualTarget\PointAtAimTarget.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Scenes\Scripting\ScriptingExample.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Scenes\Trigger volumes\GenericTrigger.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovement.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovement2D.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovementNoCamera.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Shared\Scripts\ActivateCamOnPlay.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Shared\Scripts\ActivateCameraWithDistance.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Shared\Scripts\ExampleHelpWindow.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Shared\Scripts\InvokeEventFromInspector.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Shared\Scripts\MixingCameraBlend.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Shared\Scripts\PlayerMove.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Shared\Scripts\PlayerMoveOnSphere.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Shared\Scripts\PlayerMovePhysics.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Shared\Scripts\SpawnInCircle.cs" />
     <Compile Include="Assets\Scripts\BackAndForth.cs" />
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\Chase.cs" />
@@ -598,6 +617,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Bruno/Desktop/ProjectAbyss/ProjectAbyss-1/ProjectAbyss/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>C:/Users/Bruno/Desktop/ProjectAbyss/ProjectAbyss-1/ProjectAbyss/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>C:/Users/Bruno/Desktop/ProjectAbyss/ProjectAbyss-1/ProjectAbyss/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -615,6 +637,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:/Users/Bruno/Desktop/ProjectAbyss/ProjectAbyss-1/ProjectAbyss/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>C:/Users/Bruno/Desktop/ProjectAbyss/ProjectAbyss-1/ProjectAbyss/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/Bruno/Desktop/ProjectAbyss/ProjectAbyss-1/ProjectAbyss/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
