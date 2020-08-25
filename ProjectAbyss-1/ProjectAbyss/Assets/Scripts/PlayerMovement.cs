@@ -12,6 +12,7 @@ namespace Assets.Scripts
         public float runSpeed = 40f;
         float HorizontalMove = 0f;
         bool jump = false;
+        int jumpCount = 1;
 
         // Update is called once per frame
         void Update()
@@ -21,11 +22,13 @@ namespace Assets.Scripts
 
             //animator.SetFloat("Speed", Mathf.Abs(HorizontalMove));
 
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") && jumpCount >= 1)
             {
-                Debug.Log("Jumped");
+                
                 jump = true;
+                jumpCount -= 1;
                 animator.SetBool("IsJumping", true);
+                Debug.Log(jumpCount);
             }
             /*
             if (GetComponent<Grab>().isHolding == true)
@@ -47,6 +50,13 @@ namespace Assets.Scripts
             //move character
             controller.Move(HorizontalMove * Time.fixedDeltaTime, false, jump);
             jump = false;
+            if(jump == true)
+            {
+                Debug.Log(jumpCount);
+                jumpCount = 1;
+                
+            }
+            
         }
     }
 }
