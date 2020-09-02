@@ -20,15 +20,15 @@ namespace Assets.Scripts
             // GetComponent<Grab>().isHolding = true;
             HorizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-            //animator.SetFloat("Speed", Mathf.Abs(HorizontalMove));
+            animator.SetFloat("Speed", Mathf.Abs(HorizontalMove));
 
             if (Input.GetButtonDown("Jump") && jumpCount >= 1)
             {
                 
                 jump = true;
-                jumpCount -= 1;
-                animator.SetBool("IsJumping", true);
-                Debug.Log(jumpCount);
+                jumpCount -= 2;
+                //animator.SetBool("IsJumping", true);
+                
             }
             /*
             if (GetComponent<Grab>().isHolding == true)
@@ -44,17 +44,18 @@ namespace Assets.Scripts
         public void OnLanding()
         {
             animator.SetBool("IsJumping", false);
+
+            jumpCount = 1;
+            
         }
         private void FixedUpdate()
         {
             //move character
             controller.Move(HorizontalMove * Time.fixedDeltaTime, false, jump);
             jump = false;
-            if(jump == true)
+            if(GetComponent<CharacterController2D>().m_Grounded == false)
             {
-                Debug.Log(jumpCount);
-                jumpCount = 1;
-                
+                jumpCount = 0;
             }
             
         }
