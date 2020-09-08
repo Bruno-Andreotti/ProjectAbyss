@@ -12,7 +12,7 @@ public class Chase : MonoBehaviour
     private Transform target;
     private Vector2 startPos;
 
-    public bool facingRight = false;
+    public bool facingRight = true;
 
 
 
