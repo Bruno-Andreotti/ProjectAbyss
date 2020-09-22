@@ -10,7 +10,8 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
-	[SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
+	[SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
+	[SerializeField] private UI_Inventory uiInventory;
 
 	const float k_GroundedRadius = .6f; // Radius of the overlap circle to determine if grounded
 	public bool m_Grounded;            // Whether or not the player is grounded.
@@ -18,6 +19,8 @@ public class CharacterController2D : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+	private bool isHurt = false;
+	private Inventory inventory;
 
 	[Header("Events")]
 	[Space]
@@ -32,6 +35,8 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Awake()
 	{
+		inventory = new Inventory();
+
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
 		if (OnLandEvent == null)
@@ -39,6 +44,7 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
+
 	}
 
 	private void FixedUpdate()
@@ -58,6 +64,10 @@ public class CharacterController2D : MonoBehaviour
 				if (!wasGrounded)
 					OnLandEvent.Invoke();
 			}
+		}
+		if(isHurt == true)
+		{
+			Debug.Log("Wounded");
 		}
 	}
 
@@ -151,17 +161,19 @@ public class CharacterController2D : MonoBehaviour
     {
         if (collisioninfo.collider.tag == "Danger")
         {
-           
-            FindObjectOfType<GameManager>().EndGame();
+
+			Debug.Log("HIT HIT HIT");
+			isHurt = true;
+
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+   /* private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Danger"))
         {
             FindObjectOfType<GameManager>().EndGame();
 
         }
-    }
+    }*/
 
 }

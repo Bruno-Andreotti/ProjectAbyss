@@ -12,6 +12,7 @@ namespace Assets.Scripts
         public float runSpeed = 40f;
         float HorizontalMove = 0f;
         bool jump = false;
+        bool crouch = false;
         int jumpCount = 1;
 
         // Update is called once per frame
@@ -28,6 +29,16 @@ namespace Assets.Scripts
                 jump = true;
                 jumpCount -= 2;
                 //animator.SetBool("IsJumping", true);
+                
+            }
+            if (Input.GetButtonDown("Crouch"))
+            {
+                crouch = true;
+                animator.SetBool("IsCrouching",true);
+            } else if (Input.GetButtonUp("Crouch"))
+            {
+                animator.SetBool("IsCrouching", false);
+                crouch = false;
                 
             }
             /*
@@ -51,7 +62,7 @@ namespace Assets.Scripts
         private void FixedUpdate()
         {
             //move character
-            controller.Move(HorizontalMove * Time.fixedDeltaTime, false, jump);
+            controller.Move(HorizontalMove * Time.fixedDeltaTime, crouch, jump);
             jump = false;
             if(GetComponent<CharacterController2D>().m_Grounded == false)
             {
