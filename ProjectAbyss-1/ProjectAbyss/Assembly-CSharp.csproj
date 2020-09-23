@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\BackAndForth.cs" />
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\Chase.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Grab.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Assets\Scripts\Trigger.cs" />
     <Compile Include="Assets\Scripts\UI_Inventory.cs" />
     <Compile Include="Assets\Scripts\VictoryTrigger.cs" />
+    <Compile Include="Assets\Scripts\Weapon.cs" />
     <None Include="Assets\SpriteShadow.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

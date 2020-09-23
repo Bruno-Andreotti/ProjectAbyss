@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7710457845829008502}
   - component: {fileID: 7710457845829008501}
   - component: {fileID: 7710457845829008500}
+  - component: {fileID: 8209659639038358544}
   m_Layer: 0
   m_Name: EnemyRail
   m_TagString: Danger
@@ -135,3 +136,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8209659639038358544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7710457845829008459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea5b6c1509088b43aa8b67cf5ac1c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  deathEffect: {fileID: 0}
