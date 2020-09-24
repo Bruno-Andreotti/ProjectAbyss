@@ -21,6 +21,7 @@ public class CharacterController2D : MonoBehaviour
 	private Vector3 m_Velocity = Vector3.zero;
 	private bool isHurt = false;
 	private Inventory inventory;
+	public GameObject childRenderer;
 
 	[Header("Events")]
 	[Space]
@@ -151,8 +152,9 @@ public class CharacterController2D : MonoBehaviour
 	{
 		// Switch the way the player is labelled as facing.
 		m_FacingRight = !m_FacingRight;
-
 		transform.Rotate(0f, 180f, 0f);
+		childRenderer.transform.Rotate(0f, 180f, 0f);
+		childRenderer.GetComponent<SpriteRenderer>().flipX = !childRenderer.GetComponent<SpriteRenderer>().flipX;
 	}
     private void OnCollisionEnter2D(Collision2D collisioninfo)
     {
