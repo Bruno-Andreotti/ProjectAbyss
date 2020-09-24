@@ -66,10 +66,10 @@ public class CharacterController2D : MonoBehaviour
 					OnLandEvent.Invoke();
 			}
 		}
-		if(isHurt == true)
+		/*if(isHurt == true)
 		{
 			Debug.Log("Wounded");
-		}
+		}*/
 	}
 
 
