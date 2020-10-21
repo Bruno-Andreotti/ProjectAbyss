@@ -18,8 +18,9 @@ public class PatrolAI : MonoBehaviour
         transform.Translate(Vector2.right * speed * Time.deltaTime);
 
         RaycastHit2D groundInfo = Physics2D.Raycast(limitDetection.position, Vector2.down, distance);
-        if (groundInfo.collider.CompareTag("Limit") == true)
+        if (groundInfo.collider.CompareTag("Limiter") == true)
         {
+            Debug.Log("Limite");
             if (movingRight == true)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);

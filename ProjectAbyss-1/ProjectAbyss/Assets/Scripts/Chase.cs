@@ -21,7 +21,7 @@ public class Chase : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("Player1").GetComponent<Transform>();
 
         startPos = transform.position;
     }
@@ -32,6 +32,7 @@ public class Chase : MonoBehaviour
 
         if (Vector2.Distance(transform.position, target.position)< stoppingDistance)
         {
+            Debug.Log("chasing");
             transform.position = Vector2.MoveTowards
                 (transform.position, target.position, speed * Time.deltaTime);
             animator.SetBool("isMoving", true);

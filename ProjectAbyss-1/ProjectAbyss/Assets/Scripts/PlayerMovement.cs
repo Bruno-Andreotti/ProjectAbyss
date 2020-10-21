@@ -6,16 +6,28 @@ namespace Assets.Scripts
 {
     public class PlayerMovement : MonoBehaviour
     {
+        
         public CharacterController2D controller;
         public Animator animator;
-
+        private Rigidbody2D rb;
+        public LayerMask whatIsLadder;
+        public float distance;
+        public float climbSpeed;
         public float runSpeed = 40f;
         float HorizontalMove = 0f;
         bool jump = false;
         bool crouch = false;
         int jumpCount = 1;
+        private float inputVertical;
+        private bool isClimbing;
 
         // Update is called once per frame
+
+        void Start()
+        {
+            //controller = new CharacterController2D();
+            rb = controller.m_Rigidbody2D;
+        }
         void Update()
         {
             // GetComponent<Grab>().isHolding = true;
@@ -68,7 +80,32 @@ namespace Assets.Scripts
             {
                 jumpCount = 0;
             }
-            
+
+            RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.up, distance, whatIsLadder);
+            if(hitInfo.collider != null)
+            {
+                if(Input.GetKeyDown(KeyCode.W))
+                {
+                    isClimbing = true;
+                }
+                else
+                {
+                    isClimbing = false;
+                }
+
+            }
+
+            if(isClimbing == true )
+            {
+                inputVertical = Input.GetAxisRaw("Vertical");
+                rb.velocity = new Vector2(rb.velocity.x, inputVertical * climbSpeed);
+                rb.gravityScale = 0;
+            }
+            else
+            {
+                rb.gravityScale = 3;
+                
+            }
         }
     }
 }
