@@ -23,6 +23,7 @@ public class CharacterController2D : MonoBehaviour
 	private bool isHurt = false;
 	private Inventory inventory;
 	public GameObject childRenderer;
+	public int health = 100;
 
 	[Header("Events")]
 	[Space]

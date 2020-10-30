@@ -40,7 +40,7 @@ namespace Assets.Scripts
                 
                 jump = true;
                 jumpCount -= 2;
-                //animator.SetBool("IsJumping", true);
+                animator.SetBool("IsJumping", true);
                 
             }
             if (Input.GetButtonDown("Crouch"))
@@ -69,6 +69,7 @@ namespace Assets.Scripts
             animator.SetBool("IsJumping", false);
 
             jumpCount = 1;
+            
             
         }
         private void FixedUpdate()
