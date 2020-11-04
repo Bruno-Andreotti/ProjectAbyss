@@ -164,12 +164,12 @@ public class CharacterController2D : MonoBehaviour
         {
 
 			Debug.Log("HIT HIT HIT");
-			isHurt = true;
+			FindObjectOfType<GameManager>().EndGame();
 
-        }
+		}
 		
     }
-   /* private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Danger"))
         {

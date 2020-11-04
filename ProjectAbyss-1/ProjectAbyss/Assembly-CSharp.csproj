@@ -57,6 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\LoseMenu.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Scenes\3rdPersonWithAimMode\ActivateOnKeypress.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetProperty.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetTargetController.cs" />
