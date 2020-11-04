@@ -98,9 +98,10 @@ namespace Assets.Scripts
 
             if(isClimbing == true )
             {
+                Debug.Log("is climbing");
                 inputVertical = Input.GetAxisRaw("Vertical");
                 rb.velocity = new Vector2(rb.velocity.x, inputVertical * climbSpeed);
-                rb.gravityScale = 0;
+                rb.gravityScale = -3;
             }
             else
             {

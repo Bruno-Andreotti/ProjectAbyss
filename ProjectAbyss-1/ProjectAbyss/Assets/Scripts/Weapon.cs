@@ -6,7 +6,10 @@ public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public int damage = 50;
-    public GameObject impactEffect;
+    public GameObject impactEffect1;
+    public GameObject impactEffect2;
+    private Animator flipper;
+    public bool flip;
 
     void Update()
     {
@@ -26,9 +29,15 @@ public class Weapon : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
-                //Instantiate(impactEffect1, hitInfo.point, Quaternion.identity);
+                Instantiate(impactEffect2, hitInfo.point, Quaternion.identity);
             }
-            Instantiate(impactEffect, hitInfo.point, Quaternion.identity);
+            else
+            {
+                Instantiate(impactEffect1, hitInfo.point, Quaternion.identity);
+                
+            }
         }
     }
+
+    
 }
