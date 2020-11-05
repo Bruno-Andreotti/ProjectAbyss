@@ -8,13 +8,15 @@ public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
     public GameObject LoseGameUI;
-
+    public CharacterController2D player;
     //public float restartDelay= 0f;
 
         
     
     public void EndGame()
     {
+        player.enabled = false;
+
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             LoseGameUI.SetActive(true);
         }
+
     }
 
     private void Restart()

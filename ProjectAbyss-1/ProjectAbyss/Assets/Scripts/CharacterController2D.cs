@@ -31,8 +31,6 @@ public class CharacterController2D : MonoBehaviour
 
     
 
-    
-
 
 	[Header("Events")]
 
@@ -179,6 +177,19 @@ public class CharacterController2D : MonoBehaviour
 		}
 		
     }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+            
+        }
+       
+    }
+
     /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Danger"))

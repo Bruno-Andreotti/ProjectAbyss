@@ -52,8 +52,6 @@ public class Weapon : MonoBehaviour
             }
         }
 
-
-
         RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, firePoint.right);
 
         if(hitInfo)
