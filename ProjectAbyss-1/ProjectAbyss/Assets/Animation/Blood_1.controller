@@ -15,25 +15,15 @@ AnimatorState:
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
-<<<<<<< HEAD
-  m_Mirror: 1
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 1
-=======
   m_Mirror: 0
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
->>>>>>> 93ba85b264a9d9a2e92a73f3b5e818870fcbdb08
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 3dce7c7392611a0499f9c4b3e5fc2131, type: 2}
   m_Tag: 
   m_SpeedParameter: 
-<<<<<<< HEAD
-  m_MirrorParameter: Flip
-=======
   m_MirrorParameter: 
->>>>>>> 93ba85b264a9d9a2e92a73f3b5e818870fcbdb08
   m_CycleOffsetParameter: 
   m_TimeParameter: 
 --- !u!91 &9100000
@@ -44,17 +34,7 @@ AnimatorController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Blood_1
   serializedVersion: 5
-<<<<<<< HEAD
-  m_AnimatorParameters:
-  - m_Name: Flip
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-=======
   m_AnimatorParameters: []
->>>>>>> 93ba85b264a9d9a2e92a73f3b5e818870fcbdb08
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -79,7 +59,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -6843882474991307941}
-    m_Position: {x: 290, y: 80, z: 0}
+    m_Position: {x: 200, y: 0, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
