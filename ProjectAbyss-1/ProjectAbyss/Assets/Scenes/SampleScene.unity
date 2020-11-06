@@ -576,6 +576,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Limit (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4997108886131704765, guid: 1dd1b4c1c3646e34a99570d785df84da,
+        type: 3}
+      propertyPath: m_TagString
+      value: Limiter
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dd1b4c1c3646e34a99570d785df84da, type: 3}
 --- !u!1 &293362253
@@ -1046,7 +1051,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756230173}
   m_LocalRotation: {x: -0.016747357, y: -0.006821923, z: -0.0010737474, w: 0.99983597}
-  m_LocalPosition: {x: 0.25421312, y: 4.6856446, z: -11.219782}
+  m_LocalPosition: {x: 0.05674032, y: 4.6860237, z: -11.222483}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 610808103}
@@ -1132,7 +1137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0.016747357, y: -0.006821923, z: -0.0010737474, w: 0.99983597}
-  m_LocalPosition: {x: 0.25421312, y: 4.6856446, z: -11.219782}
+  m_LocalPosition: {x: 0.05674032, y: 4.6860237, z: -11.222483}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1824,6 +1829,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2126383688 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3490643932810153456, guid: 71e0bf915e4fc5c47a4624c09f80f770,
+    type: 3}
+  m_PrefabInstance: {fileID: 3490643933996004293}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 738824258527429488d1f026bd9f9a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1342700583101290294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2189,6 +2206,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3486663988272993115, guid: 892eeb17982b5fd4dbc63d1301ba8811,
+        type: 3}
+      propertyPath: atkDamage
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486663988272993115, guid: 892eeb17982b5fd4dbc63d1301ba8811,
+        type: 3}
+      propertyPath: atkCD
+      value: 5.09
+      objectReference: {fileID: 0}
     - target: {fileID: 3486663988272993118, guid: 892eeb17982b5fd4dbc63d1301ba8811,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2325,15 +2352,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3490643932505840669, guid: 71e0bf915e4fc5c47a4624c09f80f770,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.56
+      objectReference: {fileID: 0}
     - target: {fileID: 3490643932810153456, guid: 71e0bf915e4fc5c47a4624c09f80f770,
         type: 3}
       propertyPath: uiInventory
       value: 
       objectReference: {fileID: 245457095}
+    - target: {fileID: 3490643932810153460, guid: 71e0bf915e4fc5c47a4624c09f80f770,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2126383688}
+    - target: {fileID: 3490643932810153460, guid: 71e0bf915e4fc5c47a4624c09f80f770,
+        type: 3}
+      propertyPath: impactEffect2
+      value: 
+      objectReference: {fileID: 6436884905614085569, guid: 63014687a9d4162499f6eee2fa9cf9df,
+        type: 3}
+    - target: {fileID: 3490643932810153460, guid: 71e0bf915e4fc5c47a4624c09f80f770,
+        type: 3}
+      propertyPath: impactEffect1
+      value: 
+      objectReference: {fileID: 6650424265273108731, guid: 8787b05cee0402d4d88a80dab3c015dc,
+        type: 3}
     - target: {fileID: 3490643932810153461, guid: 71e0bf915e4fc5c47a4624c09f80f770,
         type: 3}
       propertyPath: m_Name
       value: Player (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490643932810153461, guid: 71e0bf915e4fc5c47a4624c09f80f770,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71e0bf915e4fc5c47a4624c09f80f770, type: 3}
@@ -2403,6 +2457,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Limit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997108886131704765, guid: 1dd1b4c1c3646e34a99570d785df84da,
+        type: 3}
+      propertyPath: m_TagString
+      value: Limiter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dd1b4c1c3646e34a99570d785df84da, type: 3}
