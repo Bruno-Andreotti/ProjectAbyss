@@ -25,6 +25,7 @@ public class LockedDoor : MonoBehaviour
     {
         if (keyGot)
         {
+            Debug.Log("dooropen");
             Open();
         }
     }     
