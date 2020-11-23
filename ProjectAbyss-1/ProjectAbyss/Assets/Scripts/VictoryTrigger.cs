@@ -9,7 +9,7 @@ public class VictoryTrigger : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Food")
+        if (collision.gameObject.name == "Player (1)")
         {
             //FindObjectOfType<GameManager>().LevelWin();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

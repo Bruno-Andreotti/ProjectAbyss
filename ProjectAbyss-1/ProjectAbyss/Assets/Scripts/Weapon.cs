@@ -8,7 +8,8 @@ public class Weapon : MonoBehaviour
     public int damage = 50;
     public GameObject impactEffect1;
     public GameObject impactEffect2;
-
+    public GameObject muzzleFlash;
+    public Animator anim;
     public CharacterController2D player;
     private SpriteRenderer hitAnim;
     private List<GameObject> impacteffects = new List<GameObject>();
@@ -26,14 +27,22 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        anim.SetBool("IsShooting", false);
+
+        if (GetComponent<CharacterController2D>().m_wasCrouching == false)
         {
-            Shoot();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot();
+                anim.SetBool("IsShooting", true);
+            }
         }
+        
     }
 
     void Shoot()
     {
+        Instantiate(muzzleFlash, firePoint.position, firePoint.rotation);
 
         if(player.m_FacingRight)
         {
