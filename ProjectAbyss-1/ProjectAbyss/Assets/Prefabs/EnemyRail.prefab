@@ -57,6 +57,7 @@ MonoBehaviour:
     type: 3}
   shootPoint: {fileID: 1445641868907727641}
   enemyAnim: {fileID: 2252582650379172857}
+  mFlash: {fileID: 2552598791608103110, guid: 2c27726c9c15999439dc49ae5329fbcd, type: 3}
 --- !u!61 &3486663988272993116
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -111,7 +112,7 @@ GameObject:
   m_Layer: 0
   m_Name: ShootPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

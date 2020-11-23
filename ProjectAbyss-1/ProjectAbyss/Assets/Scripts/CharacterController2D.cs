@@ -171,8 +171,9 @@ public class CharacterController2D : MonoBehaviour
         if (collisioninfo.collider.tag == "Danger")
         {
 
-			Debug.Log("HIT HIT HIT");
-			FindObjectOfType<GameManager>().EndGame();
+			
+			TakeDamage(60);
+			m_Rigidbody2D.AddForce(new Vector2(50f, 50f));
 
 		}
 		

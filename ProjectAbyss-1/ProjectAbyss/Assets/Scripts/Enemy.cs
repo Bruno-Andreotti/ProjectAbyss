@@ -11,6 +11,10 @@ public class Enemy : MonoBehaviour
     public GameObject impactEffect2; //por enquanto usando o mesmo que o da classe Weapon
     public Transform shootPoint;
     public Animator enemyAnim; //Tentar utilizar este animador para movimentos comuns entre inimigos, como idle ou ataques
+    public GameObject stabPoint;
+    private bool range = false;
+    
+    public GameObject mFlash;
 
     private bool emRecarga = false;  //Booleana a ser utilizada em conjuto com o atkCD para dividir ataques
 
@@ -29,11 +33,11 @@ public class Enemy : MonoBehaviour
     {
         if(!emRecarga)
         { 
-          if(shootPoint!=null)
+          if(shootPoint!=null && this.gameObject.name == "EnemyRail")
           {
               //código para atiradores, ativa a animação de tiro e checa se acerta um characterController2D com player
               enemyAnim.SetTrigger("Shoot");
-         
+                Invoke("EnemyFlash", 0.15f);
               RaycastHit2D hitInfo = Physics2D.Raycast(shootPoint.position, shootPoint.right);
                       
               if (hitInfo)
@@ -51,6 +55,14 @@ public class Enemy : MonoBehaviour
           else
           {
             //código de atacantes de perto
+
+            if(this.gameObject.name == "EnemyChase" && range == true)
+                {
+                    enemyAnim.SetTrigger("IsStabbing");
+
+                    
+                    Debug.Log("Hit Player");
+                }
           }
 
             emRecarga = true;
@@ -69,4 +81,25 @@ public class Enemy : MonoBehaviour
         Instantiate(deathEffect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
+    void EnemyFlash()
+    {
+        Instantiate(mFlash, shootPoint.position, shootPoint.rotation);
+        
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player1"))
+        {
+            range = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player1"))
+        {
+            range = false;
+        }
+    }
+
+
 }

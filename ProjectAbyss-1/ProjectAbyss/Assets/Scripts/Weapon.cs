@@ -42,7 +42,7 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(muzzleFlash, firePoint.position, firePoint.rotation);
+        Invoke("Flash", 0.15f);
 
         if(player.m_FacingRight)
         {
@@ -77,6 +77,10 @@ public class Weapon : MonoBehaviour
                 
             }
         }
+    }
+    void Flash()
+    {
+        Instantiate(muzzleFlash, firePoint.position, firePoint.rotation);
     }
 
     

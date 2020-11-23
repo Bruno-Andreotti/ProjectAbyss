@@ -13,6 +13,7 @@ public class Chase : MonoBehaviour
     private Transform target;
     private Vector2 startPos;
     public GameObject childRenderer;
+    
 
 
     public bool facingRight = true;
@@ -28,11 +29,11 @@ public class Chase : MonoBehaviour
 
     void Update()
     {
-       
 
+        animator.SetBool("isMoving", false);
         if (Vector2.Distance(transform.position, target.position)< stoppingDistance)
         {
-            Debug.Log("chasing");
+            
             transform.position = Vector2.MoveTowards
                 (transform.position, target.position, speed * Time.deltaTime);
             animator.SetBool("isMoving", true);
@@ -46,7 +47,7 @@ public class Chase : MonoBehaviour
         else if (Vector2.Distance(transform.position, target.position) < stoppingDistance)
         
         {
-            animator.SetBool("isMoving", false);
+            
             transform.position = startPos.normalized;
             
         }
