@@ -11,13 +11,16 @@ public class Weapon : MonoBehaviour
     public GameObject muzzleFlash;
     public Animator anim;
     public CharacterController2D player;
+    private GameObject playerobj;
     private SpriteRenderer hitAnim;
     private List<GameObject> impacteffects = new List<GameObject>();
+    
 
     private void Start()
     {     
         impacteffects.Add(impactEffect1); //adiciona os prefabs à lista de hit effects (Especifico para a arma)
         impacteffects.Add(impactEffect2);
+        playerobj = GameObject.FindGameObjectWithTag("Player1");
         hitAnim = null;
     }
 
@@ -42,7 +45,8 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
-        
+        playerobj.GetComponent<PlayerMovement>().runSpeed = 0; // Zera o movimento do jogador no momento que ele pressiona o botão de tiro, só não vai dar bom se forem usadas outras armas que talvez pudessem permitir movimento...
+        Invoke("Recoil", 0.35f);
         Invoke("Flash", 0.15f);
 
         if(player.m_FacingRight)
@@ -79,10 +83,14 @@ public class Weapon : MonoBehaviour
             }
         }
     }
+
     void Flash()
     {
         Instantiate(muzzleFlash, firePoint.position, firePoint.rotation);
     }
-
-    
+ 
+    void Recoil() //Só serve pra ser Invokado depois de zerar o movimento do personagem
+    {
+        playerobj.GetComponent<PlayerMovement>().runSpeed = 15;
+    }
 }

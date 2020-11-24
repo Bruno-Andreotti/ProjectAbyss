@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts
-{
+
     public class PlayerMovement : MonoBehaviour
     {
         
@@ -110,4 +109,3 @@ namespace Assets.Scripts
             }
         }
     }
-}
