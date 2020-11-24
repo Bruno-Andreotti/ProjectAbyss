@@ -11,8 +11,8 @@ public class Enemy : MonoBehaviour
     public GameObject impactEffect2; //por enquanto usando o mesmo que o da classe Weapon
     public Transform shootPoint;
     public Animator enemyAnim; //Tentar utilizar este animador para movimentos comuns entre inimigos, como idle ou ataques
-    public GameObject stabPoint;
-    private bool range = false;
+    
+   
     
     public GameObject mFlash;
 
@@ -56,12 +56,12 @@ public class Enemy : MonoBehaviour
           {
             //código de atacantes de perto
 
-            if(this.gameObject.name == "EnemyChase" && range == true)
+            if(this.gameObject.name == "EnemyChase")
                 {
-                    enemyAnim.SetTrigger("IsStabbing");
-
-                    
-                    Debug.Log("Hit Player");
+                   enemyAnim.SetTrigger("IsStabbing");
+                   Invoke("DelayedDamage", 0.2f);
+                   
+                   Debug.Log("Hit Player");
                 }
           }
 
@@ -86,20 +86,12 @@ public class Enemy : MonoBehaviour
         Instantiate(mFlash, shootPoint.position, shootPoint.rotation);
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    void DelayedDamage()
     {
-        if (collision.gameObject.CompareTag("Player1"))
-        {
-            range = true;
-        }
+        GameObject.FindGameObjectWithTag("Player1").GetComponent<CharacterController2D>().TakeDamage(atkDamage);
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player1"))
-        {
-            range = false;
-        }
-    }
+    
 
 
 }

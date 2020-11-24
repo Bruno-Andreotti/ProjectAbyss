@@ -13,22 +13,27 @@ public class Chase : MonoBehaviour
     private Transform target;
     private Vector2 startPos;
     public GameObject childRenderer;
-    
+    private Enemy thisGuy;
 
 
     public bool facingRight = true;
-
+    private bool range = false;
 
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player1").GetComponent<Transform>();
-
+        thisGuy = this.gameObject.GetComponent<Enemy>();
         startPos = transform.position;
     }
 
     void Update()
     {
+
+        if(range)
+        {
+            thisGuy.Attack();
+        }
 
         animator.SetBool("isMoving", false);
         if (Vector2.Distance(transform.position, target.position)< stoppingDistance)
@@ -60,12 +65,19 @@ public class Chase : MonoBehaviour
         childRenderer.transform.Rotate(0f, 180f, 0f);
         childRenderer.GetComponent<SpriteRenderer>().flipX = !childRenderer.GetComponent<SpriteRenderer>().flipX;
     }
-    /* private void OnCollisionEnter2D(Collision2D collision)
-     {
-         if (collision.gameObject.tag == "Player")
-         {
 
-             Debug.Log("Derrota");
-         }
-     }*/
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player1"))
+        {
+            range = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player1"))
+        {
+            range = false;
+        }
+    }
 }

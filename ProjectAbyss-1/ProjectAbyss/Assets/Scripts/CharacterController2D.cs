@@ -172,7 +172,7 @@ public class CharacterController2D : MonoBehaviour
         {
 
 			
-			TakeDamage(60);
+			TakeDamage(0);
 			m_Rigidbody2D.AddForce(new Vector2(50f, 50f));
 
 		}

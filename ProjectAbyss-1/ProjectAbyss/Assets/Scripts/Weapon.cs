@@ -42,6 +42,7 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
+        
         Invoke("Flash", 0.15f);
 
         if(player.m_FacingRight)

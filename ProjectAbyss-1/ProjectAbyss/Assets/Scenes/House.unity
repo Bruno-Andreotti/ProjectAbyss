@@ -3385,7 +3385,6 @@ MonoBehaviour:
   impactEffect2: {fileID: 0}
   shootPoint: {fileID: 0}
   enemyAnim: {fileID: 0}
-  stabPoint: {fileID: 0}
   mFlash: {fileID: 0}
 --- !u!1 &1535889881
 GameObject:
@@ -3831,12 +3830,12 @@ PrefabInstance:
     - target: {fileID: 1342700581928706920, guid: 41c398aa4524aed479e13a1e3ddf71ab,
         type: 3}
       propertyPath: atkDamage
-      value: 15
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1342700581928706920, guid: 41c398aa4524aed479e13a1e3ddf71ab,
         type: 3}
       propertyPath: atkCD
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1342700581928706920, guid: 41c398aa4524aed479e13a1e3ddf71ab,
         type: 3}
