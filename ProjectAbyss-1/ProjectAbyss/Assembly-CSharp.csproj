@@ -82,6 +82,7 @@
     <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Shared\Scripts\SpawnInCircle.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\BackAndForth.cs" />
+    <Compile Include="Assets\Scripts\BossBehaviour.cs" />
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\Chase.cs" />
     <Compile Include="Assets\Scripts\EffectDelete.cs" />
