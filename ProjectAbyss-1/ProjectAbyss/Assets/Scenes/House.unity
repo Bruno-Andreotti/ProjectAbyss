@@ -179,6 +179,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &56118098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7308544194502498245, guid: 39bf309631fcda34da2ba85c222f596b,
+    type: 3}
+  m_PrefabInstance: {fileID: 330196849542464610}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &86198350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9127753176948355487, guid: 892eeb17982b5fd4dbc63d1301ba8811,
@@ -1573,7 +1579,8 @@ AudioSource:
   m_GameObject: {fileID: 744351098}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ab609c0ed9001694aab8276244412dfb,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: e55e293aedd37d244b4cccaa3c7ff847, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.509
@@ -4159,6 +4166,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34a62a073db13fc4dbd4b636b6e4566f, type: 3}
+--- !u!1 &2004015786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2004015788}
+  - component: {fileID: 2004015787}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2004015787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004015786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f52dca950607f9447bb0d13a3da1e136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: TiroPlayer
+    clip: {fileID: 8300000, guid: c1b572e8a11388248b624fae1d0b3131, type: 3}
+    volume: 0.292
+    pitch: 1.55
+    source: {fileID: 0}
+  - name: TiroCult
+    clip: {fileID: 8300000, guid: 6f6a71519ec50a54787c5808e02be108, type: 3}
+    volume: 0.292
+    pitch: 1.55
+    source: {fileID: 0}
+--- !u!4 &2004015788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004015786}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 48
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &330196849542464610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4226,6 +4287,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 330196850365022073, guid: 39bf309631fcda34da2ba85c222f596b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 330196850365022078, guid: 39bf309631fcda34da2ba85c222f596b,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -4236,11 +4302,46 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3212371614790008091, guid: 39bf309631fcda34da2ba85c222f596b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3212371614790008091, guid: 39bf309631fcda34da2ba85c222f596b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4362853607037640387, guid: 39bf309631fcda34da2ba85c222f596b,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7280135060270153689, guid: 39bf309631fcda34da2ba85c222f596b,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280135060270153689, guid: 39bf309631fcda34da2ba85c222f596b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280135060270153689, guid: 39bf309631fcda34da2ba85c222f596b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308544194502498245, guid: 39bf309631fcda34da2ba85c222f596b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638368994071113727, guid: 39bf309631fcda34da2ba85c222f596b,
+        type: 3}
+      propertyPath: optionsUI
+      value: 
+      objectReference: {fileID: 56118098}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39bf309631fcda34da2ba85c222f596b, type: 3}
 --- !u!1001 &2446723940196097761

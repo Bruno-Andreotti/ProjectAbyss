@@ -49,6 +49,9 @@ public class Weapon : MonoBehaviour
         Invoke("Recoil", 0.35f);
         Invoke("Flash", 0.15f);
 
+        FindObjectOfType<AudioManager>().Play("TiroPlayer");
+        Debug.Log("Som de tiro");
+
         if(player.m_FacingRight)
         {
             for(int i = 0; i < impacteffects.Count; i++)

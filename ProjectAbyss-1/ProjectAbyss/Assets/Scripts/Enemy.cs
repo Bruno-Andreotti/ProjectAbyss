@@ -38,6 +38,9 @@ public class Enemy : MonoBehaviour
               //código para atiradores, ativa a animação de tiro e checa se acerta um characterController2D com player
               enemyAnim.SetTrigger("Shoot");
                 Invoke("EnemyFlash", 0.15f);
+
+                FindObjectOfType<AudioManager>().Play("TiroCult");
+
               RaycastHit2D hitInfo = Physics2D.Raycast(shootPoint.position, shootPoint.right);
                       
               if (hitInfo)
