@@ -88,19 +88,23 @@ using UnityEngine;
                 {
                     isClimbing = true;
                 }
-                else
-                {
-                    isClimbing = false;
-                }
+               // else
+                //{
+                  //  isClimbing = false;
+                //}
 
             }
+            else
+        {
+            isClimbing = false;
+        }
 
             if(isClimbing == true )
             {
                 Debug.Log("is climbing");
                 inputVertical = Input.GetAxisRaw("Vertical");
                 rb.velocity = new Vector2(rb.velocity.x, inputVertical * climbSpeed);
-                rb.gravityScale = -3;
+                rb.gravityScale = 0;
             }
             else
             {

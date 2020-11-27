@@ -12,6 +12,7 @@ TagManager:
   - BossLimit
   - EnemyRail
   - EnemyChase
+  - GameManager
   layers:
   - Default
   - TransparentFX

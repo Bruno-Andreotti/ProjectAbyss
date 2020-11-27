@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Key : MonoBehaviour
 {
     public LockedDoor porta; //porta associada a esta chave
+    
+    
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -13,6 +17,8 @@ public class Key : MonoBehaviour
             porta.keyGot = true;
             Debug.Log("Pegada");
             this.gameObject.SetActive(false);
+            
+
         }
     }
 
