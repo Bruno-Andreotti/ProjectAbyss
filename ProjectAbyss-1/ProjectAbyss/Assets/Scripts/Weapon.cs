@@ -74,9 +74,15 @@ public class Weapon : MonoBehaviour
         if(hitInfo)
         {
             Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
+            BossBehaviour boss = hitInfo.transform.GetComponent<BossBehaviour>();
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
+                Instantiate(impactEffect2, hitInfo.point, Quaternion.identity);
+            }
+            else if (boss != null)
+            {
+                boss.TakeDamage(damage);
                 Instantiate(impactEffect2, hitInfo.point, Quaternion.identity);
             }
             else

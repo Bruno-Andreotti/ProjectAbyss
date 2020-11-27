@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 7957477708973397273}
   m_Layer: 0
   m_Name: EnemyRail 1
-  m_TagString: Danger
+  m_TagString: EnemyRail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

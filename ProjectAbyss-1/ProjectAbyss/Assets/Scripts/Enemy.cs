@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     {
         if(!emRecarga)
         { 
-          if(shootPoint!=null && this.gameObject.name == "EnemyRail")
+          if(shootPoint!=null && this.gameObject.tag == "EnemyRail")
           {
               //código para atiradores, ativa a animação de tiro e checa se acerta um characterController2D com player
               enemyAnim.SetTrigger("Shoot");
@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour
           {
             //código de atacantes de perto
 
-            if(this.gameObject.name == "EnemyChase")
+            if(this.gameObject.tag == "EnemyChase")
                 {
                    enemyAnim.SetTrigger("IsStabbing");
                    Invoke("DelayedDamage", 0.2f);

@@ -6,7 +6,19 @@ using UnityEngine;
 
 public class BossBehaviour : MonoBehaviour
 {
-    
+    public float speed;
+    public float distance;
+
+    public int health = 1000;
+    public int atkDamage; //sugiro também colocar já editável no inspetor e alterar no prefab os danos que cada inimigo deve causar. Seria interessante setar 2 valores diferentes como "Range" de dano, eventualmente 
+    public float atkCD;   //Tempo de "recarga" (em segundos) entre ataques de cada inimigo
+    bool vulnerable = false;
+    public GameObject tentacle1;
+    public GameObject tentacle2;
+    public GameObject tentacle3;
+    public GameObject tentacle4;
+
+    public Transform limitDetection;
     public Animator bossAnim;
     
 
@@ -43,10 +55,14 @@ public class BossBehaviour : MonoBehaviour
         //aqui, o boss deve começar a se mover para a esquerda em uma velocidade constante, mais lento que o player é capaz de se mover,
         //mas ainda rapido o suficiente para ser ameaçador. Talvez a mecanica de tentaculos se esticando para atacar esteja nesse estado tambem,
         // e talvez ja seja possivel causar dano no boss.
+       
         while (state == State.Chasing)
         {
+            //transform.Translate(Vector2.left * speed * Time.deltaTime);
             bossAnim.SetBool("isMoving", true);
-            yield return new WaitForFixedUpdate();
+            
+            
+                yield return new WaitForFixedUpdate();
         }
         ChangeState();
     }
@@ -56,6 +72,7 @@ public class BossBehaviour : MonoBehaviour
         //de modo que é possivel desviar agachando ou pulando. Dano de contato ainda deve ser possivel, e o boss tambem deve estar vulneravel a tiros.
         while (state == State.Stopped)
         {
+            vulnerable = true;
             yield return new WaitForFixedUpdate();
         }
         ChangeState();
@@ -77,12 +94,39 @@ public class BossBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(state == State.Chasing)
+        {
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            RaycastHit2D groundInfo = Physics2D.Raycast(limitDetection.position, Vector2.down, distance);
+            if (groundInfo.collider.CompareTag("BossLimit") == true)
+            {
+                Debug.Log("bosslimit");
+                ChangeState(State.Stopped);
+                //yield return new WaitForFixedUpdate();
+            }
+        }
     }
 
     void introDelay()
     {
         ChangeState(State.Chasing);
+    }
+    public void TakeDamage(int damage)
+    {
+        if (vulnerable == true)
+        {
+            health -= damage;
+
+            if (health <= 0)
+            {
+                Die();
+            }
+        }
+
+    }
+    void Die()
+    {
+        Destroy(gameObject);
     }
 
 }

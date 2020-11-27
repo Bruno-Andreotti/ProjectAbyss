@@ -9,6 +9,9 @@ TagManager:
   - Limiter
   - Player1
   - Boss
+  - BossLimit
+  - EnemyRail
+  - EnemyChase
   layers:
   - Default
   - TransparentFX
