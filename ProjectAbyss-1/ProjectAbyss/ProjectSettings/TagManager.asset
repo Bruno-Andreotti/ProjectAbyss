@@ -8,6 +8,7 @@ TagManager:
   - Limit
   - Limiter
   - Player1
+  - Boss
   layers:
   - Default
   - TransparentFX

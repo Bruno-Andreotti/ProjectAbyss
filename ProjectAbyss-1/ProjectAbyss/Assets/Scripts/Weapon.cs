@@ -34,7 +34,7 @@ public class Weapon : MonoBehaviour
 
         if (GetComponent<CharacterController2D>().m_wasCrouching == false)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetKeyDown("e"))
             {
                 Shoot();
                 anim.SetBool("IsShooting", true);

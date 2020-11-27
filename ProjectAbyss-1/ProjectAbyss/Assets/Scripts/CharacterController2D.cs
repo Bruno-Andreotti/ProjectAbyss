@@ -168,11 +168,11 @@ public class CharacterController2D : MonoBehaviour
 	}
     private void OnCollisionEnter2D(Collision2D collisioninfo)
     {
-        if (collisioninfo.collider.tag == "Danger")
+        if (collisioninfo.collider.tag == "Boss")
         {
 
 			
-			TakeDamage(0);
+			TakeDamage(50);
 			m_Rigidbody2D.AddForce(new Vector2(50f, 50f));
 
 		}
