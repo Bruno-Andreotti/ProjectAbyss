@@ -2507,6 +2507,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2075868093962536097, guid: 313f7e57f6fa3924783d12e7d13a2ffb,
+        type: 3}
+      propertyPath: sounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075868093962536097, guid: 313f7e57f6fa3924783d12e7d13a2ffb,
+        type: 3}
+      propertyPath: master
+      value: 
+      objectReference: {fileID: 24100000, guid: ab609c0ed9001694aab8276244412dfb,
+        type: 2}
+    - target: {fileID: 2075868093962536097, guid: 313f7e57f6fa3924783d12e7d13a2ffb,
+        type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: BossRoar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075868093962536097, guid: 313f7e57f6fa3924783d12e7d13a2ffb,
+        type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cfd345f09742e0a458485c04fb96aff5, type: 3}
+    - target: {fileID: 2075868093962536097, guid: 313f7e57f6fa3924783d12e7d13a2ffb,
+        type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075868093962536097, guid: 313f7e57f6fa3924783d12e7d13a2ffb,
+        type: 3}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1.55
+      objectReference: {fileID: 0}
     - target: {fileID: 2075868093962536102, guid: 313f7e57f6fa3924783d12e7d13a2ffb,
         type: 3}
       propertyPath: m_LocalPosition.x

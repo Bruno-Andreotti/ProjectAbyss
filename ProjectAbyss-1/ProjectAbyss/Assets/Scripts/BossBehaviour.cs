@@ -6,6 +6,10 @@ using UnityEngine;
 
 public class BossBehaviour : MonoBehaviour
 {
+    
+    public Animator bossAnim;
+    
+
     public enum State
     {
         Intro,
@@ -22,8 +26,14 @@ public class BossBehaviour : MonoBehaviour
     {
         //aqui eu devo colocar um codigo que faz o boss fazer uma animação por uns 3 a 5 segundos, em que ele está completamente invencivel,
         //e talvez dê dano de contato. depois disso ele deve mudar pro proximo estado.
+
+        FindObjectOfType<AudioManager>().Play("BossRoar"); //Assim que entra neste estado toca uma vez o rugido do Boss
+        Invoke("introDelay", 3.5f); //Tempo de delay até o bos realmente começar e fazer alguma coisa
+        bossAnim.SetBool("isMoving", false);
+
         while (state == State.Intro)
         {
+           
             yield return new WaitForFixedUpdate();
         }
         ChangeState();
@@ -35,6 +45,7 @@ public class BossBehaviour : MonoBehaviour
         // e talvez ja seja possivel causar dano no boss.
         while (state == State.Chasing)
         {
+            bossAnim.SetBool("isMoving", true);
             yield return new WaitForFixedUpdate();
         }
         ChangeState();
@@ -68,4 +79,10 @@ public class BossBehaviour : MonoBehaviour
     {
 
     }
+
+    void introDelay()
+    {
+        ChangeState(State.Chasing);
+    }
+
 }

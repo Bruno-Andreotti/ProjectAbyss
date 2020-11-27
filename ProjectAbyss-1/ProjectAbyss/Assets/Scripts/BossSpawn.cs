@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossSpawn : MonoBehaviour
 {
     public GameObject boss;
+    private BossBehaviour bossB;
     public Transform bossSpawn;
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
@@ -12,6 +13,9 @@ public class BossSpawn : MonoBehaviour
         if (collision.collider.CompareTag("Player1") == true)
         {
             Instantiate(boss, bossSpawn.position, bossSpawn.rotation);
+            bossB = boss.GetComponent<BossBehaviour>();
+            bossB.state = BossBehaviour.State.Intro;
+
         }
     }
 }
