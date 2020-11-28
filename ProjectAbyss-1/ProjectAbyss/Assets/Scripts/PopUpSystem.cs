@@ -19,6 +19,18 @@ public class PopUpSystem : MonoBehaviour
         popUpText.text = text;
         //i.sprite = image.sprite;
         animator.SetTrigger("pop");
+        Invoke("Pause", 0.5f);
+        
+    }
+    void Pause()
+    {
+        
+        Time.timeScale = 0f;
+        //GameIsPaused = true;
+    }
+    public void Resume()
+    {
+        Time.timeScale = 1f;
     }
 
 }
