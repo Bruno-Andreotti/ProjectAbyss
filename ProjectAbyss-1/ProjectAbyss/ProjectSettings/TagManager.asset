@@ -13,6 +13,7 @@ TagManager:
   - EnemyRail
   - EnemyChase
   - GameManager
+  - PopUpText
   layers:
   - Default
   - TransparentFX

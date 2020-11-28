@@ -5,6 +5,7 @@ using UnityEngine;
 public class PopUpTrigger : MonoBehaviour
 {
     public string PopUp;
+    public PopUpSystem pop;
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -13,7 +14,7 @@ public class PopUpTrigger : MonoBehaviour
             
             Debug.Log("PopUp");
             this.gameObject.SetActive(false);
-            PopUpSystem pop = GameObject.FindGameObjectWithTag("GameManager").GetComponent<PopUpSystem>();
+            
             pop.PopUp(PopUp);
 
         }
