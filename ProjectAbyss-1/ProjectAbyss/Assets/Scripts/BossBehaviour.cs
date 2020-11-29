@@ -12,29 +12,38 @@ public class BossBehaviour : MonoBehaviour
 
     //private float rndtime;
     private float rndhit = 1;
+    private float rndtime = 0;
+    
     public int health = 1000;
     public int atkDamage; //sugiro também colocar já editável no inspetor e alterar no prefab os danos que cada inimigo deve causar. Seria interessante setar 2 valores diferentes como "Range" de dano, eventualmente 
     public float atkCD;   //Tempo de "recarga" (em segundos) entre ataques de cada inimigo
     private bool emRecarga = false;
-    bool vulnerable = false;
+    private bool vulnerable = false;
+    private bool retornar; //Manda o tentáculo retornar
+
     public GameObject tentacle1;
     public GameObject tentacle2;
     public GameObject tentacle3;
     public GameObject tentacle4;
+    private GameObject activeTentacle; //Variável que vai sempre mover o tentáculo ativo, assim podemos simplesmente alternar entre tentáculos
 
-    public float tentacleSpeed;
-
-    
+    public float tentacleSpeed;   
 
     public Transform limitDetection;
     public Transform tentacleLimit1;
     public Transform tentacleLimit2;
     public Transform tentacleLimitDetection1;
     public Transform tentacleLimitDetection2;
-    public Transform tentacleLimitDetection3;
-    public Transform tentacleLimitDetection4;
+    // public Transform tentacleLimitDetection3;
+    // public Transform tentacleLimitDetection4;
+
+    private Transform tentacleLimitDetection;
+
     public Animator bossAnim;
-    
+
+    private GameObject origem1;
+    private GameObject origem2;
+    private GameObject origemalvo = null;
 
     public enum State
     {
@@ -48,6 +57,9 @@ public class BossBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        origem1 = new GameObject("origem1");
+        origem2 = new GameObject("origem2");
+        
         ChangeState();
     }
     IEnumerator Intro()
@@ -78,19 +90,21 @@ public class BossBehaviour : MonoBehaviour
             bossAnim.SetBool("isMoving", true);
             
             
-                yield return new WaitForFixedUpdate();
+            yield return new WaitForFixedUpdate();
         }
         ChangeState();
     }
     IEnumerator Stopped()
     {
-        
-
         //aqui, o boss fica parado, e deve entrar nesse estado quando entra no ultimo(primeiro) vagão. Ele deve conseguir atacar esticando tentaculos,
         //de modo que é possivel desviar agachando ou pulando. Dano de contato ainda deve ser possivel, e o boss tambem deve estar vulneravel a tiros.
+        
+
+        origem1.transform.position = tentacle1.transform.position;
+        origem2.transform.position = tentacle2.transform.position;
+
         while (state == State.Stopped)
-        {
-            
+        {          
             vulnerable = true;
             yield return new WaitForFixedUpdate();
         }
@@ -120,8 +134,6 @@ public class BossBehaviour : MonoBehaviour
         ChangeState();
     }
 
-
-
     void ChangeState()
     {
         // StopAllCoroutines();
@@ -133,6 +145,7 @@ public class BossBehaviour : MonoBehaviour
         //StopAllCoroutines();
         StartCoroutine(mystate.ToString());
     }
+    
     // Update is called once per frame
     void Update()
     {
@@ -140,22 +153,41 @@ public class BossBehaviour : MonoBehaviour
         {
             case State.Chasing:
             transform.Translate(Vector2.left * speed * Time.deltaTime);
-            RaycastHit2D groundInfo = Physics2D.Raycast(limitDetection.position, Vector2.down, distance);
-            if (groundInfo.collider.CompareTag("BossLimit") == true)
-            {
-                Debug.Log("bosslimit");
-                ChangeState(State.Stopped);
-                //yield return new WaitForFixedUpdate();
-            }
+                RaycastHit2D groundInfo1 = Physics2D.Raycast(limitDetection.position, Vector2.down, distance);
+                if (groundInfo1.collider.CompareTag("BossLimit"))
+                {
+                    ChangeState(State.Stopped);
+                }
+
+
                 break;
+
             case State.Stopped:
                 
-                //float rndtime;
-                //float rndhit;
-
-                //rndhit = Random.Range(1, 6);
-                //rndtime = Random.Range(1, 6);
                 Attack();
+
+                if(activeTentacle != null && retornar == false)
+                {                   
+                   activeTentacle.transform.Translate(Vector2.left * tentacleSpeed * Time.deltaTime);
+                   RaycastHit2D groundInfo2 = Physics2D.Raycast(tentacleLimitDetection.position, Vector2.down, distance);
+                    if (groundInfo2.collider.CompareTag("Limiter"))
+                    {
+                       retornar = true;
+                    }
+                }
+
+                if(retornar)
+                {
+                    activeTentacle.transform.position = Vector3.MoveTowards(activeTentacle.transform.position, origemalvo.transform.position, tentacleSpeed * Time.deltaTime);
+                    //activeTentacle.transform.Translate(Vector2.right * tentacleSpeed * Time.deltaTime);
+
+                    if (activeTentacle.transform.position == origem1.transform.position || activeTentacle.transform.position == origem2.transform.position)
+                     {
+                        retornar = false;
+                        
+                    }
+                }
+
                 Debug.Log(rndhit);
                 break;
         }
@@ -165,6 +197,7 @@ public class BossBehaviour : MonoBehaviour
     {
         ChangeState(State.Chasing);
     }
+
     public void TakeDamage(int damage)
     {
         if (vulnerable == true)
@@ -178,56 +211,44 @@ public class BossBehaviour : MonoBehaviour
         }
 
     }
+
     void DeathDelay()
     {
         ChangeState(State.Dead);
     }
+
     void Die()
     {
         Destroy(gameObject);
     }
+
     void Attack()
     {
         
-        if (emRecarga == false)
+        if (emRecarga == false && retornar == false) //se não estiver em recarga e não tiver nenhum tentaculo retornando
         {
+            rndhit = Random.Range(1, 3);
+            rndtime = Random.Range(2, 6);
+
+
             Debug.Log("LOOOOOOOGG");
             
-            if (rndhit == 1)
+            if (rndhit <= 1)
             {
-                Debug.Log("Tentaculos Movendo");
-                tentacle1.transform.Translate(Vector2.left * tentacleSpeed * Time.deltaTime);
-                tentacle4.transform.Translate(Vector2.left * tentacleSpeed * Time.deltaTime);
-                RaycastHit2D groundInfo1 = Physics2D.Raycast(tentacleLimitDetection1.position, Vector2.down, distance);
-                if (groundInfo1.collider.name == "TentacleLimit1")
-                {
-                    tentacle1.transform.Translate(Vector2.right * tentacleSpeed * Time.deltaTime);
-                }
+                
+                activeTentacle = tentacle1;
+                tentacleLimitDetection = tentacleLimitDetection1;
+                origemalvo = origem1;
 
-                RaycastHit2D groundInfo4 = Physics2D.Raycast(tentacleLimitDetection4.position, Vector2.down, distance);
-                if (groundInfo4.collider.name == "TentacleLimit1")
-                {
-                    tentacle4.transform.Translate(Vector2.right * tentacleSpeed * Time.deltaTime);
-                }
             }
-            if (rndhit == 2)
+            else if (rndhit > 1)
             {
-                Debug.Log("Tentaculos Movendo");
-                tentacle3.transform.Translate(Vector2.left * tentacleSpeed * Time.deltaTime);
-                tentacle2.transform.Translate(Vector2.left * tentacleSpeed * Time.deltaTime);
-                RaycastHit2D groundInfo3 = Physics2D.Raycast(tentacleLimitDetection3.position, Vector2.down, distance);
-                if (groundInfo3.collider.name == "TentacleLimit2")
-                {
-                    tentacle3.transform.Translate(Vector2.right * tentacleSpeed * Time.deltaTime);
-                }
-
-                RaycastHit2D groundInfo2 = Physics2D.Raycast(tentacleLimitDetection2.position, Vector2.down, distance);
-                if (groundInfo2.collider.name == "TentacleLimit2")
-                {
-                    tentacle2.transform.Translate(Vector2.right * tentacleSpeed * Time.deltaTime);
-                }
+                activeTentacle = tentacle2;
+                tentacleLimitDetection = tentacleLimitDetection2;
+                origemalvo = origem2;
             }
 
+            atkCD = rndtime;
             emRecarga = true;
             Invoke("Recarregar", atkCD);
         }
@@ -235,6 +256,10 @@ public class BossBehaviour : MonoBehaviour
     }
     void Recarregar()
     {
+
         emRecarga = false;
     }
+
+   
+
 }
