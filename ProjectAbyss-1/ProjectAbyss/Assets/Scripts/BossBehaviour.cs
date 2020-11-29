@@ -59,7 +59,7 @@ public class BossBehaviour : MonoBehaviour
     {
         origem1 = new GameObject("origem1");
         origem2 = new GameObject("origem2");
-        
+
         ChangeState();
     }
     IEnumerator Intro()
@@ -102,6 +102,7 @@ public class BossBehaviour : MonoBehaviour
 
         origem1.transform.position = tentacle1.transform.position;
         origem2.transform.position = tentacle2.transform.position;
+
 
         while (state == State.Stopped)
         {          
@@ -248,15 +249,14 @@ public class BossBehaviour : MonoBehaviour
                 origemalvo = origem2;
             }
 
-            atkCD = rndtime;
+            
             emRecarga = true;
-            Invoke("Recarregar", atkCD);
+            Invoke("Recarregar", rndtime);
         }
 
     }
     void Recarregar()
     {
-
         emRecarga = false;
     }
 

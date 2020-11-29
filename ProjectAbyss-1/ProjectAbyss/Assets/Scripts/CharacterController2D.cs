@@ -28,7 +28,7 @@ public class CharacterController2D : MonoBehaviour
 	private Inventory inventory;
 	public GameObject childRenderer;
 	public int health = 100;
-
+    private bool immune = false;
     
 
 
@@ -170,18 +170,26 @@ public class CharacterController2D : MonoBehaviour
     {
         if (collisioninfo.collider.tag == "Boss" || collisioninfo.collider.tag == "Danger")
         {
-
-			
-			TakeDamage(40);
-			m_Rigidbody2D.AddForce(new Vector2(50f, 50f));
-
+           
+              TakeDamage(30);
+             
+              m_Rigidbody2D.AddForce(new Vector2(50f, 50f));
+                
+            
 		}
 		
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage) //causa o dano recebido ao jogador, depois o deixa imune a estes danos depois por uns 2 segundos
     {
-        health -= damage;
+        if (!immune)
+        {
+            immune = true;
+            Invoke("Recover", 2.0f);
+
+            health -= damage;
+        }
+
 
         if (health <= 0)
         {
@@ -189,6 +197,12 @@ public class CharacterController2D : MonoBehaviour
             
         }
        
+    }
+
+
+    void Recover() //método Invokado para dar um tempo de recuperação pro jogador após tomar dano. desativa a imunidade
+    {
+        immune = false;
     }
 
     /*private void OnTriggerEnter2D(Collider2D collision)
