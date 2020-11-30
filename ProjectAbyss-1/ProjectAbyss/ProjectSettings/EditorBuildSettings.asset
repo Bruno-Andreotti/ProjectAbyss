@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Trem.unity
     guid: 294c8d9b23b77594583d3cee64848eaa
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: d1995df987ced0e4ab03d69939c9aebd
   m_configObjects: {}

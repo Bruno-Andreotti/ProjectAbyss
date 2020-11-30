@@ -80,6 +80,7 @@
     <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Shared\Scripts\PlayerMoveOnSphere.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Shared\Scripts\PlayerMovePhysics.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.6.1\Cinemachine Example Scenes\Shared\Scripts\SpawnInCircle.cs" />
+    <Compile Include="Assets\Scripts\ActivatePopUp.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\BackAndForth.cs" />
     <Compile Include="Assets\Scripts\BossBehaviour.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Assets\Scripts\BossSpawn.cs" />
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\Chase.cs" />
+    <Compile Include="Assets\Scripts\CreditsScript.cs" />
     <Compile Include="Assets\Scripts\EffectDelete.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />

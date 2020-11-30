@@ -29,6 +29,7 @@ public class CharacterController2D : MonoBehaviour
 	public GameObject childRenderer;
 	public int health = 100;
     private bool immune = false;
+	
     
 
 
@@ -168,17 +169,31 @@ public class CharacterController2D : MonoBehaviour
 	}
     private void OnCollisionEnter2D(Collision2D collisioninfo)
     {
-        if (collisioninfo.collider.tag == "Boss" || collisioninfo.collider.tag == "Danger")
+        if ( collisioninfo.collider.tag == "Danger")
         {
            
-              TakeDamage(30);
+              TakeDamage(25);
              
               m_Rigidbody2D.AddForce(new Vector2(50f, 50f));
                 
             
 		}
-		
-    }
+		if (collisioninfo.collider.tag == "Boss" )
+		{
+
+			TakeDamage(100);
+
+			m_Rigidbody2D.AddForce(new Vector2(50f, 50f));
+
+
+		}
+		if (collisioninfo.collider.name == "HealthItem")
+		{
+			health = 100;
+			Destroy(collisioninfo.collider.gameObject);
+		}
+
+	}
 
     public void TakeDamage(int damage) //causa o dano recebido ao jogador, depois o deixa imune a estes danos depois por uns 2 segundos
     {
@@ -196,6 +211,7 @@ public class CharacterController2D : MonoBehaviour
             FindObjectOfType<GameManager>().EndGame();
             
         }
+
        
     }
 

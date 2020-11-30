@@ -159,6 +159,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -2.16
       objectReference: {fileID: 0}
+    - target: {fileID: 3490643932810153457, guid: 71e0bf915e4fc5c47a4624c09f80f770,
+        type: 3}
+      propertyPath: m_Mass
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490643932810153457, guid: 71e0bf915e4fc5c47a4624c09f80f770,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490643932810153457, guid: 71e0bf915e4fc5c47a4624c09f80f770,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 3.09
+      objectReference: {fileID: 0}
     - target: {fileID: 3490643932810153460, guid: 71e0bf915e4fc5c47a4624c09f80f770,
         type: 3}
       propertyPath: impactEffect2
@@ -179,7 +194,7 @@ PrefabInstance:
     - target: {fileID: 3490643932810153461, guid: 71e0bf915e4fc5c47a4624c09f80f770,
         type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: Player v2
       objectReference: {fileID: 0}
     - target: {fileID: 3490643932810153461, guid: 71e0bf915e4fc5c47a4624c09f80f770,
         type: 3}

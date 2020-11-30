@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8739794401933617609}
   - component: {fileID: 5538215403488015496}
   - component: {fileID: 2370308130690195035}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tentaculo_3 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146900815874564768}
   m_LocalRotation: {x: -0, y: -0, z: 0.6156102, w: 0.7880509}
-  m_LocalPosition: {x: -1.8886005, y: 1.0258869, z: 0}
+  m_LocalPosition: {x: -3.1120443, y: 1.0061119, z: 0}
   m_LocalScale: {x: 1.5546161, y: 1.8840507, z: 3.4638445}
   m_Children: []
   m_Father: {fileID: 325960741015718919}
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ddb77c15d66d96b4eb0c2fae1df2e11c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -110,7 +110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8631273846767121367}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: TentacleDetect2
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 8779013371503123000}
   - component: {fileID: 179761638971669620}
   - component: {fileID: 5238461865635089083}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tentaculo_3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,13 +156,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418026388903498483}
-  m_LocalRotation: {x: -0, y: -0, z: -0.9154789, w: -0.4023661}
-  m_LocalPosition: {x: -2.5565603, y: 0.029775113, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.8338085, w: -0.5520538}
+  m_LocalPosition: {x: -3.7800043, y: 0.0100000715, z: 0}
   m_LocalScale: {x: 1.6088618, y: 1.8178136, z: 3.4638445}
   m_Children: []
   m_Father: {fileID: 325960741015718919}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 132.548}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 112.98401}
 --- !u!212 &179761638971669620
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -201,7 +201,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ddb77c15d66d96b4eb0c2fae1df2e11c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 5649464090161430744}
   - component: {fileID: 6525782656398263090}
   - component: {fileID: 1909278446633189801}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tentaculo_4
   m_TagString: Danger
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6c8928f06735b9a43a40a921918dc4f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 325960741015718919}
   - component: {fileID: 5190970776648468908}
   - component: {fileID: 3026017680260015360}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +501,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: cdb2080aab235cf468fda2c5d8602b2f, type: 3}
   m_Color: {r: 0.4339623, g: 0.0102349585, b: 0.41335672, a: 1}
   m_FlipX: 1
@@ -541,7 +541,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4829706364289968164}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: TentacleDetect1
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
@@ -573,7 +573,7 @@ GameObject:
   - component: {fileID: 690114314288229287}
   - component: {fileID: 6350039828719684983}
   - component: {fileID: 1969561821421848596}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tentaculo_4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3081023568804245977}
   m_LocalRotation: {x: -0, y: -0, z: -0.3414009, w: -0.93991786}
-  m_LocalPosition: {x: -2.1486912, y: 1.4670994, z: -0.7946657}
+  m_LocalPosition: {x: -3.3721352, y: 1.4473244, z: -0.7946657}
   m_LocalScale: {x: 0.28767115, y: 0.25197133, z: 0.69041777}
   m_Children: []
   m_Father: {fileID: 325960741015718919}
@@ -632,7 +632,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c13f639bb1ae05e4aa008942a9cd3ab2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -732,7 +732,7 @@ GameObject:
   - component: {fileID: 894795855235162651}
   - component: {fileID: 6437965291098660727}
   - component: {fileID: 7572036425350596203}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tentaculo_3
   m_TagString: Danger
   m_Icon: {fileID: 0}
@@ -747,7 +747,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5319833019132121232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.88, y: 1.9976372, z: 0}
+  m_LocalPosition: {x: -2.3, y: 1.64, z: 0}
   m_LocalScale: {x: 0.29555604, y: 0.2706825, z: 0.68347335}
   m_Children:
   - {fileID: 5515967725848296119}
@@ -792,7 +792,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6c8928f06735b9a43a40a921918dc4f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 1137474194800241078}
   - component: {fileID: 5287689532120514252}
   - component: {fileID: 8349701752975867410}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tentaculo_3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,7 +875,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5372018385455636219}
   m_LocalRotation: {x: -0, y: -0, z: 0.49244338, w: 0.8703445}
-  m_LocalPosition: {x: -2.6806977, y: -0.7524974, z: 0}
+  m_LocalPosition: {x: -3.9041417, y: -0.7722724, z: 0}
   m_LocalScale: {x: 1.5822681, y: 1.8491273, z: 3.4638445}
   m_Children: []
   m_Father: {fileID: 325960741015718919}
@@ -919,7 +919,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ddb77c15d66d96b4eb0c2fae1df2e11c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -959,7 +959,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4013754923000287951}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: TentacleDetect4
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
@@ -991,7 +991,7 @@ GameObject:
   - component: {fileID: 4936028902784478038}
   - component: {fileID: 1443585506748156509}
   - component: {fileID: 8252813021645121962}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tentaculo_3 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1006,7 +1006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5587791737069493607}
   m_LocalRotation: {x: -0, y: -0, z: 0.63277507, w: 0.7743357}
-  m_LocalPosition: {x: -2.187115, y: 2.260199, z: 0}
+  m_LocalPosition: {x: -3.410559, y: 2.240424, z: 0}
   m_LocalScale: {x: 1.5521337, y: 1.8873129, z: 3.4638445}
   m_Children: []
   m_Father: {fileID: 325960741015718919}
@@ -1050,7 +1050,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ddb77c15d66d96b4eb0c2fae1df2e11c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1092,7 +1092,7 @@ GameObject:
   - component: {fileID: 753448599245518005}
   - component: {fileID: 4000104844538218260}
   - component: {fileID: 1121944065981940148}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tentaculo_3 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1107,7 +1107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5883541029492693364}
   m_LocalRotation: {x: -0, y: -0, z: 0.46474257, w: 0.88544583}
-  m_LocalPosition: {x: -2.0748022, y: -0.9338546, z: 0}
+  m_LocalPosition: {x: -3.2982461, y: -0.9536296, z: 0}
   m_LocalScale: {x: 1.5901295, y: 1.8396492, z: 3.4638445}
   m_Children: []
   m_Father: {fileID: 325960741015718919}
@@ -1151,7 +1151,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ddb77c15d66d96b4eb0c2fae1df2e11c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1221,7 +1221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5515967725848296119}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: TentacleDetect3
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
@@ -1253,7 +1253,7 @@ GameObject:
   - component: {fileID: 3437196612234742956}
   - component: {fileID: 7971435285046825026}
   - component: {fileID: 8591763655577561377}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tentaculo_4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1268,8 +1268,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7202198059105642799}
   m_LocalRotation: {x: -0, y: -0, z: -0.59528154, w: -0.8035172}
-  m_LocalPosition: {x: -2.187115, y: -0.1299276, z: -0.7946657}
-  m_LocalScale: {x: 0.2753992, y: 0.26353413, z: 0.69041777}
+  m_LocalPosition: {x: -3.410559, y: -0.14970265, z: -0.7946657}
+  m_LocalScale: {x: 0.2753992, y: 0.43232772, z: 0.69041777}
   m_Children: []
   m_Father: {fileID: 325960741015718919}
   m_RootOrder: 7
@@ -1312,7 +1312,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c13f639bb1ae05e4aa008942a9cd3ab2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1354,7 +1354,7 @@ GameObject:
   - component: {fileID: 677440618326601602}
   - component: {fileID: 224466855642108316}
   - component: {fileID: 4988024175362345365}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tentaculo_3 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1368,13 +1368,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7803493664553596786}
-  m_LocalRotation: {x: -0, y: -0, z: 0.93777555, w: 0.3472421}
-  m_LocalPosition: {x: -2.6570482, y: 1.1260394, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.855414, w: 0.51794493}
+  m_LocalPosition: {x: -3.61, y: 1.02, z: 0}
   m_LocalScale: {x: 1.6257377, y: 1.7989987, z: 3.4638445}
   m_Children: []
   m_Father: {fileID: 325960741015718919}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 139.363}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 117.61101}
 --- !u!212 &224466855642108316
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1413,7 +1413,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ddb77c15d66d96b4eb0c2fae1df2e11c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1456,7 +1456,7 @@ GameObject:
   - component: {fileID: 3201107084702694385}
   - component: {fileID: 2134916187045432647}
   - component: {fileID: 772582592665694131}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tentaculo_1
   m_TagString: Danger
   m_Icon: {fileID: 0}
@@ -1471,7 +1471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8053409816002579630}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.68, y: -1.97, z: 0}
+  m_LocalPosition: {x: -2.37, y: -1.97, z: 0}
   m_LocalScale: {x: 0.29555604, y: 0.2706825, z: 0.68347335}
   m_Children:
   - {fileID: 4829706364289968164}
@@ -1516,7 +1516,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6c8928f06735b9a43a40a921918dc4f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1584,7 +1584,7 @@ GameObject:
   - component: {fileID: 3697373149522437792}
   - component: {fileID: 975851858086701679}
   - component: {fileID: 8359434716474501779}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tentaculo_4 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1599,7 +1599,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8771301201557388181}
   m_LocalRotation: {x: -0, y: -0, z: -0.49541524, w: -0.8686563}
-  m_LocalPosition: {x: -2.361492, y: -1.6457376, z: -0.7946657}
+  m_LocalPosition: {x: -3.584936, y: -1.6655127, z: -0.7946657}
   m_LocalScale: {x: 0.27953067, y: 0.2594098, z: 0.69041777}
   m_Children: []
   m_Father: {fileID: 325960741015718919}
@@ -1643,7 +1643,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c13f639bb1ae05e4aa008942a9cd3ab2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1724,7 +1724,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.3200073, y: 1.5377665}
+  m_Offset: {x: -10.43, y: 1.5377665}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1750,7 +1750,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.2926025, y: 10.282856}
+  m_Offset: {x: -10.27, y: 10.282856}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1777,20 +1777,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8.08
   distance: 1500
-  health: 1000
-  atkDamage: 30
+  health: 750
   atkCD: 5
   tentacle1: {fileID: 8053409816002579630}
   tentacle2: {fileID: 8918564026703764657}
   tentacle3: {fileID: 5319833019132121232}
   tentacle4: {fileID: 1621336350888419516}
-  tentacleSpeed: 15
+  tentacleSpeed: 10
   limitDetection: {fileID: 7413279032318720414}
   tentacleLimit1: {fileID: 1624657974044603455}
   tentacleLimit2: {fileID: 884397528962758471}
   tentacleLimitDetection1: {fileID: 4829706364289968164}
   tentacleLimitDetection2: {fileID: 8631273846767121367}
+  tentacleLimitDetection3: {fileID: 0}
+  tentacleLimitDetection4: {fileID: 0}
   bossAnim: {fileID: 3026017680260015360}
+  LoaderUI: {fileID: 8889227345811871771, guid: 260c0b9cd1055fa4eab2cc1e90432d1a,
+    type: 3}
   state: 0
 --- !u!1 &8918564026703764657
 GameObject:
@@ -1804,7 +1807,7 @@ GameObject:
   - component: {fileID: 2523840381383299071}
   - component: {fileID: 7832628227324491081}
   - component: {fileID: 7435086283253153324}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tentaculo_2
   m_TagString: Danger
   m_Icon: {fileID: 0}
@@ -1864,7 +1867,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6c8928f06735b9a43a40a921918dc4f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -15,7 +16,7 @@ public class BossBehaviour : MonoBehaviour
     private float rndtime = 0;
     
     public int health = 1000;
-    public int atkDamage; //sugiro também colocar já editável no inspetor e alterar no prefab os danos que cada inimigo deve causar. Seria interessante setar 2 valores diferentes como "Range" de dano, eventualmente 
+    //public int atkDamage; //sugiro também colocar já editável no inspetor e alterar no prefab os danos que cada inimigo deve causar. Seria interessante setar 2 valores diferentes como "Range" de dano, eventualmente 
     public float atkCD;   //Tempo de "recarga" (em segundos) entre ataques de cada inimigo
     private bool emRecarga = false;
     private bool vulnerable = false;
@@ -47,6 +48,7 @@ public class BossBehaviour : MonoBehaviour
     private GameObject origem4;
     private GameObject origemalvo = null;
     private GameObject origemalvo2 = null;
+    public GameObject LoaderUI;
 
     public enum State
     {
@@ -133,10 +135,12 @@ public class BossBehaviour : MonoBehaviour
     }
     IEnumerator Dead()
     {
-        
+        Instantiate(LoaderUI);
+        Invoke("LoadNext", 6f);
+        Die();
         while (state == State.Dead)
         {
-            Die();
+            
             yield return new WaitForFixedUpdate();
         }
         ChangeState();
@@ -274,6 +278,9 @@ public class BossBehaviour : MonoBehaviour
         emRecarga = false;
     }
 
-   
+   void LoadNext()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
 }
