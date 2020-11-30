@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  atkDamage: 25
+  atkDamage: 35
   atkCD: 2
   deathEffect: {fileID: 4750351498807163324, guid: 846921c7341f2a34fb330abaa41c1d1f,
     type: 3}
