@@ -137,7 +137,7 @@ public class BossBehaviour : MonoBehaviour
     {
         Instantiate(LoaderUI);
         Invoke("LoadNext", 6f);
-        Die();
+        //Die();
         while (state == State.Dead)
         {
             
@@ -280,7 +280,7 @@ public class BossBehaviour : MonoBehaviour
 
    void LoadNext()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Creditos");
     }
 
 }
