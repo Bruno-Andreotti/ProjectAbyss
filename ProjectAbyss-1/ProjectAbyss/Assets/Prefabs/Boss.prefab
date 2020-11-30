@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 400572949012642196}
   m_Layer: 0
   m_Name: TentacleLimit1
-  m_TagString: Limiter
+  m_TagString: Limiter2
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -416,7 +416,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 22.558666, y: 3.897232}
+  m_Size: {x: 22.558666, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &2012615513736552273
 GameObject:
@@ -847,7 +847,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 22.558666, y: 4.007822}
+  m_Size: {x: 22.558666, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &5372018385455636219
 GameObject:
@@ -1206,7 +1206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6398932499345588894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.15, y: 5.81, z: 0}
+  m_LocalPosition: {x: -1.15, y: -0.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8774023778712480560}
@@ -1471,7 +1471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8053409816002579630}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.68, y: -2.05, z: 0}
+  m_LocalPosition: {x: -2.68, y: -1.97, z: 0}
   m_LocalScale: {x: 0.29555604, y: 0.2706825, z: 0.68347335}
   m_Children:
   - {fileID: 4829706364289968164}
@@ -1560,7 +1560,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.4930172, y: 1.3824189}
+  m_Offset: {x: 1.4930172, y: 1.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1571,7 +1571,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 22.613964, y: 4.1737127}
+  m_Size: {x: 22.5, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &8771301201557388181
 GameObject:
@@ -1784,7 +1784,7 @@ MonoBehaviour:
   tentacle2: {fileID: 8918564026703764657}
   tentacle3: {fileID: 5319833019132121232}
   tentacle4: {fileID: 1621336350888419516}
-  tentacleSpeed: 6
+  tentacleSpeed: 15
   limitDetection: {fileID: 7413279032318720414}
   tentacleLimit1: {fileID: 1624657974044603455}
   tentacleLimit2: {fileID: 884397528962758471}
@@ -1919,5 +1919,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 22.559263, y: 4.043083}
+  m_Size: {x: 22.559263, y: 2}
   m_EdgeRadius: 0

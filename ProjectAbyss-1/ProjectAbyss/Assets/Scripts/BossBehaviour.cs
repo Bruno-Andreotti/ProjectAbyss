@@ -26,7 +26,7 @@ public class BossBehaviour : MonoBehaviour
     public GameObject tentacle3;
     public GameObject tentacle4;
     private GameObject activeTentacle; //Variável que vai sempre mover o tentáculo ativo, assim podemos simplesmente alternar entre tentáculos
-
+    private GameObject activeTentacle2;
     public float tentacleSpeed;   
 
     public Transform limitDetection;
@@ -34,16 +34,19 @@ public class BossBehaviour : MonoBehaviour
     public Transform tentacleLimit2;
     public Transform tentacleLimitDetection1;
     public Transform tentacleLimitDetection2;
-    // public Transform tentacleLimitDetection3;
-    // public Transform tentacleLimitDetection4;
+     public Transform tentacleLimitDetection3;
+     public Transform tentacleLimitDetection4;
 
-    private Transform tentacleLimitDetection;
+    private Transform maintentacleLimitDetection;
 
     public Animator bossAnim;
 
     private GameObject origem1;
     private GameObject origem2;
+    private GameObject origem3;
+    private GameObject origem4;
     private GameObject origemalvo = null;
+    private GameObject origemalvo2 = null;
 
     public enum State
     {
@@ -59,6 +62,8 @@ public class BossBehaviour : MonoBehaviour
     {
         origem1 = new GameObject("origem1");
         origem2 = new GameObject("origem2");
+        origem3 = new GameObject("origem3");
+        origem4 = new GameObject("origem4");
 
         ChangeState();
     }
@@ -102,6 +107,8 @@ public class BossBehaviour : MonoBehaviour
 
         origem1.transform.position = tentacle1.transform.position;
         origem2.transform.position = tentacle2.transform.position;
+        origem3.transform.position = tentacle3.transform.position;
+        origem4.transform.position = tentacle4.transform.position;
 
 
         while (state == State.Stopped)
@@ -167,11 +174,12 @@ public class BossBehaviour : MonoBehaviour
                 
                 Attack();
 
-                if(activeTentacle != null && retornar == false)
+                if(activeTentacle != null && activeTentacle != null && retornar == false)
                 {                   
                    activeTentacle.transform.Translate(Vector2.left * tentacleSpeed * Time.deltaTime);
-                   RaycastHit2D groundInfo2 = Physics2D.Raycast(tentacleLimitDetection.position, Vector2.down, distance);
-                    if (groundInfo2.collider.CompareTag("Limiter"))
+                    activeTentacle2.transform.Translate(Vector2.left * tentacleSpeed * Time.deltaTime);
+                    RaycastHit2D groundInfo2 = Physics2D.Raycast(maintentacleLimitDetection.position, Vector2.down, distance);
+                    if (groundInfo2.collider.CompareTag("Limiter2"))
                     {
                        retornar = true;
                     }
@@ -180,9 +188,11 @@ public class BossBehaviour : MonoBehaviour
                 if(retornar)
                 {
                     activeTentacle.transform.position = Vector3.MoveTowards(activeTentacle.transform.position, origemalvo.transform.position, tentacleSpeed * Time.deltaTime);
+                    activeTentacle2.transform.position = Vector3.MoveTowards(activeTentacle2.transform.position, origemalvo2.transform.position, tentacleSpeed * Time.deltaTime);
                     //activeTentacle.transform.Translate(Vector2.right * tentacleSpeed * Time.deltaTime);
 
-                    if (activeTentacle.transform.position == origem1.transform.position || activeTentacle.transform.position == origem2.transform.position)
+                    if (activeTentacle.transform.position == origem1.transform.position || activeTentacle.transform.position == origem2.transform.position 
+                        && activeTentacle2.transform.position == origem3.transform.position || activeTentacle2.transform.position == origem4.transform.position)
                      {
                         retornar = false;
                         
@@ -238,15 +248,19 @@ public class BossBehaviour : MonoBehaviour
             {
                 
                 activeTentacle = tentacle1;
-                tentacleLimitDetection = tentacleLimitDetection1;
+                activeTentacle2 = tentacle4;
+                maintentacleLimitDetection = tentacleLimitDetection1;
                 origemalvo = origem1;
+                origemalvo2 = origem4;
 
             }
             else if (rndhit > 1)
             {
                 activeTentacle = tentacle2;
-                tentacleLimitDetection = tentacleLimitDetection2;
+                activeTentacle2 = tentacle3;
+                maintentacleLimitDetection = tentacleLimitDetection2;
                 origemalvo = origem2;
+                origemalvo2 = origem3;
             }
 
             
