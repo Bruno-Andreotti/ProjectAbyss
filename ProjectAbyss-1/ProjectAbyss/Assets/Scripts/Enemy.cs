@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int health = 100;
-    public int atkDamage; //sugiro também colocar já editável no inspetor e alterar no prefab os danos que cada inimigo deve causar. Seria interessante setar 2 valores diferentes como "Range" de dano, eventualmente 
+    public int atkDamage; 
     public float atkCD;   //Tempo de "recarga" (em segundos) entre ataques de cada inimigo
     public GameObject deathEffect;
     public GameObject impactEffect2; //por enquanto usando o mesmo que o da classe Weapon
@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage (int damage)
     {
+        //dano recebido pelos inimigos
         health -= damage;
 
         if (health <= 0)
@@ -81,17 +82,20 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        //inimigo desaparece e deixa um cadaver bonito
         Instantiate(deathEffect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
     void EnemyFlash()
     {
+        //a luz que sai de uma arma atirada
         Instantiate(mFlash, shootPoint.position, shootPoint.rotation);
         
     }
 
     void DelayedDamage()
     {
+        //determina o dano feito corpo a corpo, pra ser invocado para não ficar injusto
         GameObject.FindGameObjectWithTag("Player1").GetComponent<CharacterController2D>().TakeDamage(atkDamage);
     }
     

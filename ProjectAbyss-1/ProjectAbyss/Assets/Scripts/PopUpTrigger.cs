@@ -6,9 +6,10 @@ public class PopUpTrigger : MonoBehaviour
 {
     public string PopUp;
     public PopUpSystem pop;
-    // Start is called before the first frame update
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //quando colide com o player, desativa o objeto e liga a PopUp associada
         if (collision.collider.CompareTag("Player1") == true)
         {
             

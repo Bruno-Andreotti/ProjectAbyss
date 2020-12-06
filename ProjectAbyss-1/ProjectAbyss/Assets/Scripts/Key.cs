@@ -14,6 +14,7 @@ public class Key : MonoBehaviour
     {
         if(collision.collider.CompareTag("Player1") == true)
         {
+            //quando colidindo com o player, destranca a porta associada e desativa o objeto
             porta.keyGot = true;
             Debug.Log("Pegada");
             this.gameObject.SetActive(false);

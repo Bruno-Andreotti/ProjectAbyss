@@ -28,7 +28,7 @@ public class ActivatePopUp : MonoBehaviour
 
     }
     void Delay()
-    {
+    {//Ativa uma caixa de dialogo subsequente após a do objeto aparecer, usado para caixas de dialogo sucessivas
         extraDialogue.SetActive(true);
     }
 }

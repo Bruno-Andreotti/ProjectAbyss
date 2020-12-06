@@ -3,29 +3,29 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
-	[SerializeField] private float m_JumpForce = 10000f;							// Amount of force added when the player jumps.
-	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
-	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
-	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
-	[SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
-	[SerializeField] private LayerMask m_WhatIsCeiling;
-	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
-	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
-	[SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
+	[SerializeField] private float m_JumpForce = 10000f;							// Quantidade de força adicionada para o personagem pular
+	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// porcentagem da velocidade normal do personagem, quando agachado
+	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// Amaciamento do movimento do personagem
+	[SerializeField] private bool m_AirControl = false;							// Determina se o personagem pode se mover enquanto pula
+	[SerializeField] private LayerMask m_WhatIsGround;                          // Determina o que é considerado "chão"
+	[SerializeField] private LayerMask m_WhatIsCeiling;                         // Determina o que é considerado "teto"
+	[SerializeField] private Transform m_GroundCheck;							// marca onde o personagem checa o que é chão
+	[SerializeField] private Transform m_CeilingCheck;                          // marca onde o personagem checa o que é teto
+	[SerializeField] private Collider2D m_CrouchDisableCollider;                // colisor que é desativado enquando ag
 	[SerializeField] private UI_Inventory uiInventory;
 
-	const float k_GroundedRadius = .6f; // Radius of the overlap circle to determine if grounded
-	public bool m_Grounded;            // Whether or not the player is grounded.
-	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
+	const float k_GroundedRadius = .6f; // Raio do circulo que determina se o personagem está no chão
+	public bool m_Grounded;            // se o personagem está ou nao no chao
+	const float k_CeilingRadius = .2f; // raio determina se o personagem pode se levantar
 	public Rigidbody2D m_Rigidbody2D;
 
-	public bool m_FacingRight = true;  // For determining which way the player is currently facing.
+	public bool m_FacingRight = true;  // Determina a direção que o personagem está olhando
 
 	
 
 	private Vector3 m_Velocity = Vector3.zero;
-	private bool isHurt = false;
-	private Inventory inventory;
+	//private bool isHurt = false;
+	//private Inventory inventory;
 	public GameObject childRenderer;
 	public int health = 100;
     private bool immune = false;
@@ -47,7 +47,7 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Awake()
 	{
-		inventory = new Inventory();
+		//inventory = new Inventory();
 
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
@@ -64,8 +64,8 @@ public class CharacterController2D : MonoBehaviour
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
 
-		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
+		//o personagem está no chao se o circulo do groundcheck acerta qualquer coisa designado como chão
+		
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
@@ -86,21 +86,21 @@ public class CharacterController2D : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump)
 	{
-		// If crouching, check to see if the character can stand up
+		// Se agachado, checa se o personagem pode se levantar
 		if (!crouch)
 		{
-			// If the character has a ceiling preventing them from standing up, keep them crouching
+			// se houver teto, o personagem continua agachado
 			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsCeiling))
 			{
 				crouch = true;
 			}
 		}
 
-		//only control the player if grounded or airControl is turned on
+		//Apenas controla o personagem se o AirColtrol estiver "true"
 		if (m_Grounded || m_AirControl)
 		{
 
-			// If crouching
+			
 			if (crouch)
 			{
 				if (!m_wasCrouching)
@@ -109,15 +109,15 @@ public class CharacterController2D : MonoBehaviour
 					OnCrouchEvent.Invoke(true);
 				}
 
-				// Reduce the speed by the crouchSpeed multiplier
+				
 				move *= m_CrouchSpeed;
 
-				// Disable one of the colliders when crouching
+				// Desabilita o collider quando agachado
 				if (m_CrouchDisableCollider != null)
 					m_CrouchDisableCollider.enabled = false;
 			} else
 			{
-				// Enable the collider when not crouching
+				//  Habilita o collider quando não agachado
 				if (m_CrouchDisableCollider != null)
 					m_CrouchDisableCollider.enabled = true;
 
@@ -128,28 +128,28 @@ public class CharacterController2D : MonoBehaviour
 				}
 			}
 
-			// Move the character by finding the target velocity
+			// Move o personagem achando a velocidade alvo, amacia o movimento, e vira o sprite de acordo com a direção
 			Vector3 targetVelocity = new Vector2(move * 30f, m_Rigidbody2D.velocity.y);
-			// And then smoothing it out and applying it to the character
+			
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
-			// If the input is moving the player right and the player is facing left...
+			
 			if (move > 0 && !m_FacingRight)
 			{
-				// ... flip the player.
+				
 				Flip();
 			}
-			// Otherwise if the input is moving the player left and the player is facing right...
+			
 			else if (move < 0 && m_FacingRight)
 			{
-				// ... flip the player.
+				
 				Flip();
 			}
 		}
-		// If the player should jump...
+		// Faz o personagem pular adicionando força vertical
 		if (jump == true)
 		{
-			// Add a vertical force to the player.
+			
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 			
@@ -161,7 +161,7 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Flip()
 	{
-		// Switch the way the player is labelled as facing.
+		//Troca o lado para que o personagem está olhando
 		m_FacingRight = !m_FacingRight;
 		transform.Rotate(0f, 180f, 0f);
 		childRenderer.transform.Rotate(0f, 180f, 0f);
@@ -169,6 +169,7 @@ public class CharacterController2D : MonoBehaviour
 	}
     private void OnCollisionEnter2D(Collision2D collisioninfo)
     {
+		//Danos de contato feitos pelo Boss e perigos genericos, e um item que recupera vida
         if ( collisioninfo.collider.tag == "Danger")
         {
            

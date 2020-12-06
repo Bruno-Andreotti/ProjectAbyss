@@ -8,6 +8,7 @@ public class IntroScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Chama o metodo de carregar a proxima cena, após os 36 segundos de introdução
         Invoke("LoadNext", 36f);
     }
 

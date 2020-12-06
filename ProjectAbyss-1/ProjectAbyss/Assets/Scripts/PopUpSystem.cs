@@ -15,6 +15,7 @@ public class PopUpSystem : MonoBehaviour
 
     public void PopUp(string text)
     {
+        //ativa a UI de PopUps e prepara pra pausar o tempo
         popUpBox.SetActive(true);
         popUpText.text = text;
         //i.sprite = image.sprite;
@@ -24,12 +25,13 @@ public class PopUpSystem : MonoBehaviour
     }
     void Pause()
     {
-        
+        //para o tempo
         Time.timeScale = 0f;
         //GameIsPaused = true;
     }
     public void Resume()
     {
+        //despausa o tempo apos clicar no botao
         Time.timeScale = 1f;
     }
 

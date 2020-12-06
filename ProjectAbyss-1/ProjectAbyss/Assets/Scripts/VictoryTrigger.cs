@@ -9,6 +9,7 @@ public class VictoryTrigger : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //em colisão com o player, ativa a tela de loading e prepara para carregar a proxima cena
         if (collision.gameObject.name == "Player (1)")
         {
             //FindObjectOfType<GameManager>().LevelWin();
@@ -18,7 +19,7 @@ public class VictoryTrigger : MonoBehaviour
     }
 
     void LoadNext()
-    {
+    {//carrega a proxima cena
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     

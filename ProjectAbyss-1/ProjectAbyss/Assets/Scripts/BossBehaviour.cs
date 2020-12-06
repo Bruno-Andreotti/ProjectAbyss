@@ -16,7 +16,7 @@ public class BossBehaviour : MonoBehaviour
     private float rndtime = 0;
     
     public int health = 1000;
-    //public int atkDamage; //sugiro também colocar já editável no inspetor e alterar no prefab os danos que cada inimigo deve causar. Seria interessante setar 2 valores diferentes como "Range" de dano, eventualmente 
+     
     public float atkCD;   //Tempo de "recarga" (em segundos) entre ataques de cada inimigo
     private bool emRecarga = false;
     private bool vulnerable = false;
@@ -71,8 +71,8 @@ public class BossBehaviour : MonoBehaviour
     }
     IEnumerator Intro()
     {
-        //aqui eu devo colocar um codigo que faz o boss fazer uma animação por uns 3 a 5 segundos, em que ele está completamente invencivel,
-        //e talvez dê dano de contato. depois disso ele deve mudar pro proximo estado.
+        //aqui o boss faz uma animação por uns 3 a 5 segundos, em que ele está completamente invencivel,
+        //e dá dano de contato. depois disso ele deve mudar pro proximo estado.
 
         FindObjectOfType<AudioManager>().Play("BossRoar"); //Assim que entra neste estado toca uma vez o rugido do Boss
         Invoke("introDelay", 2.5f); //Tempo de delay até o bos realmente começar e fazer alguma coisa
@@ -88,8 +88,7 @@ public class BossBehaviour : MonoBehaviour
     IEnumerator Chasing()
     {
         //aqui, o boss deve começar a se mover para a esquerda em uma velocidade constante, mais lento que o player é capaz de se mover,
-        //mas ainda rapido o suficiente para ser ameaçador. Talvez a mecanica de tentaculos se esticando para atacar esteja nesse estado tambem,
-        // e talvez ja seja possivel causar dano no boss.
+        //mas ainda rapido o suficiente para ser ameaçador.
        
         while (state == State.Chasing)
         {
@@ -122,6 +121,7 @@ public class BossBehaviour : MonoBehaviour
     }
     IEnumerator DeathAnim()
     {
+        //estado de animação de morte, chama a animação, toca o rugido, e prepara pra chamar o estado de morte
         bossAnim.SetBool("IsDying", true);
             FindObjectOfType<AudioManager>().Play("BossRoar");
         Invoke("DeathDelay", 5f);
@@ -135,6 +135,7 @@ public class BossBehaviour : MonoBehaviour
     }
     IEnumerator Dead()
     {
+        //faz aparecer a tela de Loading, e chama a proxima cena
         Instantiate(LoaderUI);
         Invoke("LoadNext", 6f);
         //Die();
@@ -145,7 +146,7 @@ public class BossBehaviour : MonoBehaviour
         }
         ChangeState();
     }
-
+    //os dois metodos abaixo controlam as mudanças de estado
     void ChangeState()
     {
         // StopAllCoroutines();
@@ -161,6 +162,8 @@ public class BossBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //aqui foram colocadas as ações de estado que, por algum motivo, nao funcionaram nos IEnumerators e seus 'whiles'. Isso inclui a movimentação do estado Chasing e sua parada com troca para o proximo estado,
+        // e os ataques do estado Stopped.
         switch(state)
         {
             case State.Chasing:
@@ -215,6 +218,7 @@ public class BossBehaviour : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        //governa como o boss leva dano do personagem, e faz ele entrar nos estados de morte
         if (vulnerable == true)
         {
             health -= damage;
@@ -234,11 +238,13 @@ public class BossBehaviour : MonoBehaviour
 
     void Die()
     {
+        //faz o boss sair do jogo
         Destroy(gameObject);
     }
 
     void Attack()
     {
+        //controla o movimento dos tentaculos na ultima fase do boss: dois tentaculos aleatorios se movem ao mesmo tempo, e voltam
         
         if (emRecarga == false && retornar == false) //se não estiver em recarga e não tiver nenhum tentaculo retornando
         {
@@ -275,11 +281,13 @@ public class BossBehaviour : MonoBehaviour
     }
     void Recarregar()
     {
+        //causa um delay aleatório nas ações do boss
         emRecarga = false;
     }
 
    void LoadNext()
     {
+        //carrega a proxima cena
         SceneManager.LoadScene("Creditos");
     }
 
