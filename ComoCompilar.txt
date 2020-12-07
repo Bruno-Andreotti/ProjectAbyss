@@ -1,0 +1,4 @@
+Instruções de como compilar:
+Após abrir o projeto na Unity versão 2019.4.6f1, vá na aba File, Build Settings, clique no botão, e selecione uma pasta VAZIA.
+Após alguns minutos, os arquivos da build, incluindo o executável funcional, estaram na pasta selecionada, e o jogo deve começar
+clicando no executável ProjetoAbyss.
