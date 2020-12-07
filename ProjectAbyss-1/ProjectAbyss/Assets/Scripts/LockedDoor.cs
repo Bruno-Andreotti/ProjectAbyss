@@ -16,6 +16,7 @@ public class LockedDoor : MonoBehaviour
 
     private void Open()
     {
+        //faz a porta abrir, rotacionando o sprite e desabilitando o colisor
         porta.Rotate(0.0f, portaRotate, 0.0f);
         colisor.enabled = false;
         
@@ -23,6 +24,7 @@ public class LockedDoor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //a porta abre quando o jogador colide com ela, enquanto tem a chave associada
         if (keyGot)
         {
             Debug.Log("dooropen");

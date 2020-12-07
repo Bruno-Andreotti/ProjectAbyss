@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     {
         foreach (Sound s in sounds)
         {
+            //ordena os sons e cria AudioSources para quando o metodo Play for chamado; estes ja podem ter o volume e pitch ajustados antes mesmo do começo da cena
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
             
@@ -24,6 +25,7 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     public void Play(string name)
     {
+        //Toca o som especificado quando o método é chamado
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
     }

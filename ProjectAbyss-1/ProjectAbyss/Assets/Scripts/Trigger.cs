@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
+    //codigo para portões moveis, que se mantém em uma posição enquanto algum objeto estiver no colisor, e outra enquanto não
     
     
     public GameObject Gate;

@@ -4,6 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class Sound
 {
+    //classe dos clipes de som a serem usadas pelo AudioManager, podem ter o volume e pitch ajustados
     public string name;
 
     public AudioClip clip;

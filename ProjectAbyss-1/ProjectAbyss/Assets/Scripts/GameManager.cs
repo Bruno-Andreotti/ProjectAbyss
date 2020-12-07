@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     
     public void EndGame()
     {
+        //desliga o jogador, mostra a UI de derrota, e para o tempo
         player.enabled = false;
 
         if (gameHasEnded == false)
@@ -29,6 +30,8 @@ public class GameManager : MonoBehaviour
 
     private void Restart()
     {
+        //recarrega a cena atual e reativa o jogador
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        player.enabled = true;
     }
 }

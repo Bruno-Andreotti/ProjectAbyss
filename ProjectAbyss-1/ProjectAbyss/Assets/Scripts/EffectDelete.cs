@@ -10,6 +10,7 @@ public class EffectDelete : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //faz com que efeitos especiais, como jorras de sangue, desapareçam depois da duração, para nao pesar a cena com um monte de objetos
         Invoke("SelfDelete", duration);
     }
     void SelfDelete()

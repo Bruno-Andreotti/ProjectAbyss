@@ -10,6 +10,7 @@ public class BossLimiter : MonoBehaviour
 
      void OnTriggerEnter2D(Collider2D collision)
     {
+        //esse codigo apenas serve para passar o estado do boss para o Stopped, quando este encostar no colisor do objeto associado.
         if (collision.gameObject.CompareTag("Boss"))
         {
             boss = collision.GetComponent<BossBehaviour>();

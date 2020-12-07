@@ -16,6 +16,7 @@ public class VerticalPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //rotaciona o effector para que o jogador possa atravessar o colisor segurando a tecla de agachar, ou quando sobe uma escada
         if(Input.GetKeyUp(KeyCode.S))
         {
             waitTime = 0.5f;

@@ -24,11 +24,13 @@ using UnityEngine;
 
         void Start()
         {
+        //encontra o rigidbody do jogador
             //controller = new CharacterController2D();
             rb = controller.m_Rigidbody2D;
         }
         void Update()
         {
+        //aceita os inputs de botões para serem mandados para o CharacterController
             // GetComponent<Grab>().isHolding = true;
             HorizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
@@ -65,6 +67,7 @@ using UnityEngine;
 
         public void OnLanding()
         {
+        //reseta um contador de pulos, para que o jogador nao possa pular infinitamente
             animator.SetBool("IsJumping", false);
 
             jumpCount = 1;
@@ -73,6 +76,7 @@ using UnityEngine;
         }
         private void FixedUpdate()
         {
+        //manda os comandos para serem executados pelo CharacterController, e determina se há um lugar para ser escalado, como uma escada
             //move character
             controller.Move(HorizontalMove * Time.fixedDeltaTime, crouch, jump);
             jump = false;

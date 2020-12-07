@@ -21,6 +21,8 @@ private void Start()
 
 private void Update()
 {
+        //os NPCs se movimentam desde o inicio, até os limitadores no ambiente, e então viram e andam para o outro lado. É uma versão simplificada do codigo de patrulha dos inimigos,
+        //que nao leva em conta a existencia do jogador
     transform.Translate(Vector2.right * speed * Time.deltaTime);
 
     RaycastHit2D groundInfo = Physics2D.Raycast(limitDetection.position, Vector2.down, distance);

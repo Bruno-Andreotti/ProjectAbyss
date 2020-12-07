@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory
-{
+{//essa classe seria utilizada para organizar um sistema de inventario, mas a mecanica nao pôde ser implementada de modo satisfatorio
     private List<Item> itemList;
     public Inventory()
     {

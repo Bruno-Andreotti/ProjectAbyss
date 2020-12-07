@@ -12,6 +12,7 @@ public class SettingsMenu : MonoBehaviour
 
     void Start()
     {
+        //Procura as resoluções que o PC suporta, e lista elas para serem escolhidas no dropdown
         resolutions = Screen.resolutions;
 
         resDropdown.ClearOptions();
@@ -39,20 +40,24 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetResolution(int resolutionIndex)
     {
+        //modifica a resolução da tela
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen );
     }
     public void SetVolume(float volume)
     {
+        //muda o volume Master
         audioMixer.SetFloat("MasterVolume", volume);
     }
 
     public void SetQuality (int qualityIndex)
     {
+        //muda a qualidade da imagem
         QualitySettings.SetQualityLevel(qualityIndex);
     }
     public void SetFullscreen (bool isFullscreen)
     {
+        //determina se o jogo está em tela cheia ou nao
         Screen.fullScreen = isFullscreen;
     }
 }

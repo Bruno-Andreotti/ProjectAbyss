@@ -22,6 +22,7 @@ public class PatrolAI : MonoBehaviour
 
     private void Update()
     {
+        //o inimigo se move a uma direçao, e vira para outra quando detecta um limitador no ambiente
         transform.Translate(Vector2.right * speed * Time.deltaTime);
 
         RaycastHit2D groundInfo = Physics2D.Raycast(limitDetection.position, Vector2.down, distance);
@@ -32,6 +33,7 @@ public class PatrolAI : MonoBehaviour
             RaycastHit2D sightInfo = Physics2D.Raycast(thisGuy.shootPoint.position, thisGuy.shootPoint.right);
             if (sightInfo.collider.CompareTag("Player1") == true)
             {
+                //quando o inimigo vê o jogador, ele pára e  chama o metodo Attack da classe Enemy
                 //Aqui seria o ponto ideal para iniciar o estado Chase/Atacando
                 speed = 0;
                 thisGuy.Attack();
@@ -42,7 +44,7 @@ public class PatrolAI : MonoBehaviour
 
 
         if (groundInfo.collider.CompareTag("Limiter") == true)
-        {
+        {//é aqui que o inimigo detecta os limitadores e vira pra outra direção
             Debug.Log("Limite");
             if (movingRight == true)
             {

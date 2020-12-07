@@ -45,13 +45,15 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
-        playerobj.GetComponent<PlayerMovement>().runSpeed = 0; // Zera o movimento do jogador no momento que ele pressiona o botão de tiro, só não vai dar bom se forem usadas outras armas que talvez pudessem permitir movimento...
+        playerobj.GetComponent<PlayerMovement>().runSpeed = 0; // Zera o movimento do jogador no momento que ele pressiona o botão de tiro
+        //invoca o delay e o efeito de flash da arma
         Invoke("Recoil", 0.35f);
         Invoke("Flash", 0.15f);
 
         FindObjectOfType<AudioManager>().Play("TiroPlayer");
         Debug.Log("Som de tiro");
 
+        //faz com que a arma sempre atire na direção em que o jogador está olhando
         if(player.m_FacingRight)
         {
             for(int i = 0; i < impacteffects.Count; i++)
@@ -70,7 +72,7 @@ public class Weapon : MonoBehaviour
         }
 
         RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, firePoint.right);
-
+        //detecta se o tiro acertou um inimigo ou uma parede, com os efeitos apropriados, e dano para o inimigo se aplicavel
         if(hitInfo)
         {
             Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
